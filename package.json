@@ -2,7 +2,13 @@
   "name": "@bilva/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nx": "./node_modules/.bin/nx",
+    "build": "pnpm nx run-many -t build",
+    "lint": "pnpm nx run-many -t lint",
+    "test": "pnpm nx run-many -t test",
+    "all": "pnpm nx run-many -t lint,build,test"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",
