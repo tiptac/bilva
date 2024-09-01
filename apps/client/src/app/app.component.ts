@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 @Component({
-  selector: 'bilva-root',
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'bilva',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
