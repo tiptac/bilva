@@ -1,0 +1,16 @@
+:host {
+  background: url('/assets/images/content-background.jpg') no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  //   background-attachment: fixed;
+}
+
+ion-card {
+  height: 30em;
+  opacity: 0.8;
+}
+
+div {
+  height: 100vh;
+}

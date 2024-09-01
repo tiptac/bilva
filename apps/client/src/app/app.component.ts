@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RefresherCustomEvent } from '@ionic/angular';
+
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'bilva',
@@ -16,4 +18,9 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
+
+  handleRefresh(event: RefresherCustomEvent) {
+    window.location.reload();
+    event.target.complete();
+  }
 }

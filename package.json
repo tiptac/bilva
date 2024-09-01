@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "nx": "./node_modules/.bin/nx",
+    "nx": "nx",
     "build": "pnpm nx run-many -t build",
     "lint": "pnpm nx run-many -t lint",
     "test": "pnpm nx run-many -t test",
@@ -66,6 +66,7 @@
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
     "@typescript-eslint/utils": "^8.0.0-alpha.28",
+    "angular:component@latest": "link:@nx/angular:component@latest",
     "esbuild": "^0.19.2",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",

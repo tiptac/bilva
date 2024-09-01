@@ -19,7 +19,8 @@
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/client/public"
+            "input": "apps/client/src/assets",
+            "output": "./assets"
           },
           {
             "glob": "**/*.svg",
