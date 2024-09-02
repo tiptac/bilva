@@ -1,16 +1,27 @@
 :host {
   background: url('/assets/images/content-background.jpg') no-repeat;
-  background-position: center;
-  background-size: auto 100%;
+  background-position: top;
   background-repeat: no-repeat;
-  //   background-attachment: fixed;
+  background-size: cover;
+  background-color: transparent;
+  overflow-y: scroll;
 }
 
 ion-card {
-  height: 30em;
+  height: 20em;
   opacity: 0.8;
+  color: var(--ion-color-contrast);
+}
+ion-card:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s;
 }
 
 div {
-  height: 100vh;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+
+.center {
+  text-align: center;
 }
