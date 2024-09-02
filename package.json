@@ -9,7 +9,7 @@
     "lint": "pnpm nx run-many -t lint",
     "test": "pnpm nx run-many -t test",
     "all": "pnpm nx run-many -t lint,build,test",
-    "predeploy": "pnpm build -p client --baseHref /bilva/ --deployUrl /bilva/",
+    "predeploy": "pnpm build -p client --baseHref /bilva/",
     "deploy": "gh-pages -d dist/apps/client"
   },
   "private": true,
