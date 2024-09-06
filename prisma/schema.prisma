@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["omitApi"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserStatus {
+  ACTIVE
+  DELETED
+}
+
+enum UserContactVerificationStatus {
+  PENDING
+  VERIFIED
+}
+
+model User {
+  id                          Int                           @id @default(autoincrement())
+  fullName                    String                        @db.VarChar(255)
+  phone                       String                        @unique @db.VarChar(15)
+  email                       String                        @unique @db.VarChar(320)
+  passHash                    String
+  status                      UserStatus                    @default(ACTIVE)
+  Property                    Property[]
+  PropertyVisitors            PropertyVisitors[]
+  ContactRequest              ContactRequest[]
+  UserPhoneVerificationStatus UserPhoneVerificationStatus[]
+  UserEmailVerificationStatus UserEmailVerificationStatus[]
+}
+
+model UserPhoneVerificationStatus {
+  id     Int                           @id @default(autoincrement())
+  userId Int
+  user   User                          @relation(fields: [userId], references: [id])
+  status UserContactVerificationStatus @default(PENDING)
+
+  @@unique([userId])
+}
+
+model UserEmailVerificationStatus {
+  id     Int                           @id @default(autoincrement())
+  userId Int
+  user   User                          @relation(fields: [userId], references: [id])
+  status UserContactVerificationStatus @default(PENDING)
+
+  @@unique([userId])
+}
+
+enum PropertyStatus {
+  UNSOLD
+  SOLD
+}
+
+enum PropertyVerificationStatus {
+  PENDING
+  INPROGRESS
+  VERIFIED
+}
+
+model Property {
+  id               Int                        @id @default(autoincrement())
+  summary          String                     @db.Text
+  description      String                     @unique @db.Text
+  address          String                     @db.Text
+  userId           Int
+  user             User                       @relation(fields: [userId], references: [id])
+  status           PropertyStatus             @default(UNSOLD)
+  verification     PropertyVerificationStatus @default(PENDING)
+  PropertyVisitors PropertyVisitors[]
+  ContactRequest   ContactRequest[]
+
+  @@index([userId])
+}
+
+model PropertyVisitors {
+  id             BigInt   @id @default(autoincrement()) @db.BigInt
+  userId         Int
+  user           User     @relation(fields: [userId], references: [id])
+  propertyId     Int
+  property       Property @relation(fields: [propertyId], references: [id])
+  firstVisitedAt DateTime @default(now())
+  lastVisitedAt  DateTime @updatedAt
+
+  @@unique([userId, propertyId])
+  @@index([userId, propertyId])
+}
+
+model ContactRequest {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id])
+  propertyId Int
+  property   Property @relation(fields: [propertyId], references: [id])
+  timestamp  DateTime @default(now())
+
+  @@unique([userId, propertyId])
+  @@index([userId, propertyId])
+}
