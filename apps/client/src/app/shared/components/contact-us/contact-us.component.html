@@ -1,0 +1,17 @@
+<ion-list [formGroup]="contactUsform">
+  <ion-item>
+    <ion-input formControlName="fullName" placeholder="Full Name"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input formControlName="phone" placeholder="Phone Number"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input formControlName="email" placeholder="yourname@domain.com">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button [disabled]="contactUsform.invalid"> </ion-button>
+  </ion-item>
+</ion-list>
