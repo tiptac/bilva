@@ -66,6 +66,7 @@
     "@nx/playwright": "19.6.4",
     "@nx/web": "19.6.4",
     "@nx/workspace": "19.6.4",
+    "@nxext/ionic-angular": "^19.0.0",
     "@playwright/test": "^1.36.0",
     "@schematics/angular": "~18.2.0",
     "@swc-node/register": "~1.9.1",
