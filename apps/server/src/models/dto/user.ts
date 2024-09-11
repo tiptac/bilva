@@ -11,6 +11,7 @@ export interface SignupUserDto {
 export interface UserDto extends Omit<SignupUserDto, 'password'> {
   id: number;
   status: UserStatus;
+  isAdmin: boolean;
 }
 
 export interface UpdateUserDto {

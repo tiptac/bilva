@@ -16,7 +16,6 @@ router.post('/', async (req: RequestWithSession, res) => {
       return;
     }
     const user = await userDtoService.login(username, password);
-    req.session.loggedIn = true;
     req.session.user = user;
     res.status(StatusCodes.CREATED).json(req.session.user);
   } catch (error) {

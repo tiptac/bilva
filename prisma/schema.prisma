@@ -36,6 +36,7 @@ model User {
   ContactRequest              ContactRequest[]
   UserPhoneVerificationStatus UserPhoneVerificationStatus[]
   UserEmailVerificationStatus UserEmailVerificationStatus[]
+  isAdmin                     Boolean                       @default(false)
 }
 
 model UserPhoneVerificationStatus {

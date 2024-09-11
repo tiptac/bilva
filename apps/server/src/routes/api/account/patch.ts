@@ -24,7 +24,7 @@ router.patch('/', async (req: RequestWithSession, res) => {
       password,
       phone,
     });
-    req.session.loggedIn = true;
+
     req.session.user = user;
     res.status(StatusCodes.OK).json(user);
   } catch (error) {

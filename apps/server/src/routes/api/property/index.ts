@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { auth } from '../../../handlers/auth';
+import { authN } from '../../../handlers/auth';
 
 import { router as create } from './create';
 
@@ -8,6 +8,6 @@ export const router = express.Router();
 
 // UnAuthenticated APIs
 
-router.use('/', auth);
+router.use('/', authN);
 // Authenticated APIs
 router.use('/', create);

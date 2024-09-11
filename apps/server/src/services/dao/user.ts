@@ -5,7 +5,7 @@ import { client } from './common/client';
 export class UserDaoService {
   public async login(
     username: string,
-    password: string,
+    password: string
   ): Promise<UserDao | null> {
     return await client.user.findFirst({
       omit: {
@@ -60,7 +60,7 @@ export class UserDaoService {
 
   public async updateUser(
     id: number,
-    updateUserDao: UpdateUserDao,
+    updateUserDao: UpdateUserDao
   ): Promise<UserDao> {
     return await client.user.update({
       data: updateUserDao.password

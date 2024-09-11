@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { auth } from '../../handlers/auth';
+import { authN, adminAuthZ } from '../../handlers/auth';
 
 import { router as account } from './account';
 import { router as session } from './session';
@@ -9,11 +9,14 @@ import { router as property } from './property';
 
 export const router = express.Router();
 
-// UnAuthenticated API
+// Public API
 router.use('/docs', swagger);
 router.use('/account', account);
 router.use('/session', session);
 router.use('/property', property);
 
-router.use('/', auth);
-// Authenticated API
+router.use('/', authN);
+// AuthN API
+
+router.use('/', adminAuthZ);
+// Admin AuthZ API

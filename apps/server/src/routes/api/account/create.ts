@@ -23,7 +23,7 @@ router.post('/', async (req: RequestWithSession, res) => {
       password,
       phone,
     });
-    req.session.loggedIn = true;
+
     req.session.user = user;
     res.status(StatusCodes.CREATED).json(user);
   } catch (error) {

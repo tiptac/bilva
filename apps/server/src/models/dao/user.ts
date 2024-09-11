@@ -14,4 +14,12 @@ export interface UpdateUserDao {
   email?: string;
   status?: UserStatus;
 }
-export type UserDao = Omit<User, 'passHash'>;
+
+export interface UserDao {
+  id: number;
+  fullName: string;
+  phone: string;
+  email: string;
+  status: UserStatus;
+  isAdmin: boolean;
+}
