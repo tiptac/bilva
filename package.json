@@ -10,7 +10,6 @@
     "test": "pnpm nx run-many -t test",
     "all": "pnpm nx run-many -t lint,build,test",
     "serve": "pnpm nx run-many -t serve",
-    "start": "run-p nx serve server start-client",
     "predeploy": "pnpm build -p client --baseHref /bilva/",
     "deploy": "gh-pages -d dist/apps/client",
     "prisma": "prisma migrate dev -n init && prisma generate"
