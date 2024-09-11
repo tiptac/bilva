@@ -2,49 +2,31 @@
   overflow-y: scroll;
 }
 
-.page {
-  min-height: 100%;
-}
-
-.middle {
-  vertical-align: middle;
-}
-
-ion-card {
-  height: 20em;
-  opacity: 0.8;
-  color: var(--ion-color-contrast);
-}
-ion-card:hover {
-  opacity: 0.5;
-  transition: opacity 0.3s;
-}
-
-.hero {
+div.hero {
   background: url('../../assets/images/content-background.jpg') no-repeat;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
+  .gradient {
+    min-height: 100%;
+    height: auto;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    display: flex;
+  }
+  .quote {
+    font-size: 3em;
+  }
 }
 
-.gradient {
-  height: 100%;
-  opacity: 0.5;
-  background-color: black;
-  padding-left: 30px;
-}
-
-.quote {
-  // font-size: 60px;
-  margin-top: 2em;
-}
-
-.contact-us {
-  margin-left: 2em;
-  margin-right: 2em;
-  padding-top: 2em;
-}
-.contact-us-message {
-  min-height: 200px;
+div.contact-us {
+  ion-card {
+    min-height: 30em;
+    height: auto;
+  }
 }

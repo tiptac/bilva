@@ -1,10 +1,9 @@
 <ion-app>
-  <ion-header>
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title> <ion-icon name="home"></ion-icon> Bilva Groups</ion-title>
-      <ion-buttons id="menu" slot="secondary">
-        <ion-button [routerLink]="['home']">Home</ion-button>
-      </ion-buttons>
+      <ion-title routerLink="['home']">
+        <ion-icon name="home"></ion-icon> Bilva Groups</ion-title
+      >
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
