@@ -3,8 +3,7 @@
 }
 
 div.hero {
-  background: url('../../assets/images/content-background.jpg');
-  background-size: cover;
+  background-image: url('../../assets/images/content-background.jpg');
 
   .quote {
     font-size: 3em;
@@ -14,7 +13,7 @@ div.hero {
 div.know-more {
   .business {
     height: 20em;
-    background-size: cover;
+
     .gradient {
       background: linear-gradient(
         90deg,
@@ -35,12 +34,12 @@ div.know-more {
   }
 
   .buy-sell-rent {
-    background: url('../../assets/images/buy_sell_rent.jpg');
+    background-image: url('../../assets/images/buy_sell_rent.jpg');
   }
   .manage {
-    background: url('../../assets/images/property_management.webp');
+    background-image: url('../../assets/images/property_management.webp');
   }
   .build {
-    background: url('../../assets/images/construction.jpg');
+    background-image: url('../../assets/images/construction.jpg');
   }
 }
