@@ -13,7 +13,7 @@ export class UserDtoService {
     }
   }
 
-  async login(username: string, password: string): Promise<UserDto | null> {
+  async login(username: string, password: string): Promise<UserDto> {
     try {
       const user = await userDaoService.login(username, password);
       if (user) {
@@ -29,19 +29,19 @@ export class UserDtoService {
   async signup(signupUserDto: SignupUserDto): Promise<UserDto> {
     try {
       const user = await userDaoService.createUser(
-        signupUserDto as CreateUserDao,
+        signupUserDto as CreateUserDao
       );
       return await userDaoService.getUser(user.id);
     } catch (error) {
       console.error('Failed to Signup', error);
       const user = await userDaoService.findUser(
         signupUserDto.phone,
-        signupUserDto.email,
+        signupUserDto.email
       );
       if (user) {
         throw new ApiError(
           'Failed to Signup',
-          ApiErrorCode.PHONE_OR_EMAIL_ALREADY_EXISTS,
+          ApiErrorCode.PHONE_OR_EMAIL_ALREADY_EXISTS
         );
       }
       throw error;
@@ -65,12 +65,12 @@ export class UserDtoService {
       console.error('Failed to update', error);
       const user = userDaoService.findUser(
         updateUserDto.phone,
-        updateUserDto.email,
+        updateUserDto.email
       );
       if (user) {
         throw new ApiError(
           `Failed to update`,
-          ApiErrorCode.PHONE_OR_EMAIL_ALREADY_EXISTS,
+          ApiErrorCode.PHONE_OR_EMAIL_ALREADY_EXISTS
         );
       }
       throw error;
