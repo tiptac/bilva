@@ -3,30 +3,44 @@
 }
 
 div.hero {
-  background: url('../../assets/images/content-background.jpg') no-repeat;
-  background-position: top;
-  background-repeat: no-repeat;
+  background: url('../../assets/images/content-background.jpg');
   background-size: cover;
-  background-color: transparent;
-  .gradient {
-    min-height: 100%;
-    height: auto;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.7) 50%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-    display: flex;
-  }
+
   .quote {
     font-size: 3em;
   }
 }
 
-div.contact-us {
-  ion-card {
-    min-height: 30em;
-    height: auto;
+div.know-more {
+  .business {
+    height: 20em;
+    background-size: cover;
+    .gradient {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+    }
+    .gradient:hover {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+      transition-duration: 0.5s;
+    }
+  }
+
+  .buy-sell-rent {
+    background: url('../../assets/images/buy_sell_rent.jpg');
+  }
+  .manage {
+    background: url('../../assets/images/property_management.webp');
+  }
+  .build {
+    background: url('../../assets/images/construction.jpg');
   }
 }

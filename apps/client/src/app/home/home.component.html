@@ -1,4 +1,4 @@
-<div class="page hero">
+<div class="page hero backgroud-image-shade">
   <div class="gradient middle pl-1">
     <ion-grid>
       <ion-row>
@@ -8,13 +8,21 @@
           </ion-text>
           <ion-text>
             <h6 class="left sub-quote">
-              BUY, SELL, RENT OR BUILD YOUR HOUSE WITH CONFIDENCE
+              BUY, SELL, RENT, MANAGE OR BUILD YOUR HOUSE WITH CONFIDENCE
             </h6>
           </ion-text>
+
           <ion-button
             color="dark"
             class="get-started mt-1"
-            (click)="scrollToContactUs()"
+            (click)="scrollTo(knowMore)"
+          >
+            KNOW MORE
+          </ion-button>
+          <ion-button
+            color="dark"
+            class="get-started mt-1"
+            [routerLink]="['/contact']"
           >
             GET STARTED
           </ion-button>
@@ -24,147 +32,29 @@
   </div>
 </div>
 
-<div #contactUs class="page contact-us">
+<div #knowMore class="page know-more">
   <ion-grid>
     <ion-row>
-      <ion-col size="12" size-lg="6">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Let's Talk</ion-card-title>
-            <ion-card-subtitle>Share your excitement with us</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <form [formGroup]="contactUsform">
-              <ion-list [inset]="true">
-                <ion-item>
-                  <ion-input
-                    formControlName="fullName"
-                    placeholder="Full Name"
-                    errorText="Required"
-                  >
-                  </ion-input>
-                </ion-item>
-
-                <ion-item>
-                  <ion-input
-                    type="tel"
-                    formControlName="phone"
-                    placeholder="Phone Number"
-                    errorText="Required Valid Phone Number"
-                  >
-                  </ion-input>
-                </ion-item>
-
-                <ion-item>
-                  <ion-input
-                    type="email"
-                    formControlName="email"
-                    placeholder="yourname@domain.com"
-                    errorText="Required Valid Email"
-                  >
-                  </ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-textarea
-                    class="contact-us-message"
-                    formControlName="message"
-                    placeholder="Your Message ..."
-                    errorText="Required"
-                  >
-                  </ion-textarea>
-                </ion-item>
-
-                <ion-item>
-                  <ion-button
-                    [disabled]="contactUsform.invalid"
-                    (click)="requestCallBack()"
-                  >
-                    REQUEST CALL BACK
-                  </ion-button>
-                </ion-item>
-              </ion-list>
-            </form>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" size-lg="6">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Contact us</ion-card-title>
-            <ion-card-subtitle></ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <div class="address">
-              <address>
-                There are many variations of passages of Lorem Ipsum available
-                <br />
-                This is address line 2
-                <br />
-              </address>
-              <br />
-              <p>
-                <a color="light" href="tel:+910123456789" target="_blank">
-                  <ion-icon name="call-outline"></ion-icon> +91 0123 456789
-                </a>
-                <br />
-                <a
-                  href="https://api.whatsapp.com/send?phone=910123456789"
-                  target="_blank"
-                >
-                  <ion-icon name="logo-whatsapp"></ion-icon> +910123456789
-                </a>
-                <br />
-                <a
-                  color="light"
-                  href="mailto:bilvagroups@somedomain.com"
-                  target="_blank"
-                >
-                  <ion-icon name="mail-outline"></ion-icon>
-                  bilvagroups&amp;somedomain.com
-                </a>
-              </p>
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</div>
-
-<div class="page">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" offset-lg="2" size-lg="4">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Mission</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </ion-card-content>
-        </ion-card>
+      <ion-col size="12" size-lg="4">
+        <div class="business buy-sell-rent backgroud-image-shade">
+          <div class="gradient ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
+        </div>
       </ion-col>
       <ion-col size="12" size-lg="4">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Vision</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </ion-card-content>
-        </ion-card>
+        <div class="business manage backgroud-image-shade">
+          <div class="gradient ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" size-lg="4">
+        <div class="business build backgroud-image-shade">
+          <div class="gradient ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

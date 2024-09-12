@@ -14,3 +14,9 @@ address {
 ion-title {
   cursor: pointer;
 }
+
+ion-button.about,
+ion-button.home,
+ion-button.contact {
+  color: burlywood;
+}

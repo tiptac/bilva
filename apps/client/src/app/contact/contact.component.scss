@@ -1,0 +1,13 @@
+:host {
+  overflow-y: scroll;
+}
+
+div.contact-us {
+  background: url('../../assets/images/contact.jpg');
+  background-size: cover;
+
+  ion-card {
+    min-height: 30em;
+    height: auto;
+  }
+}
