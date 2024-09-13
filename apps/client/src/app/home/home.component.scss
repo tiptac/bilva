@@ -15,6 +15,7 @@ div.know-more {
     height: 20em;
 
     .gradient {
+      cursor: pointer;
       background: linear-gradient(
         90deg,
         rgba(0, 0, 0, 0.3) 0%,
@@ -31,15 +32,20 @@ div.know-more {
       );
       transition-duration: 0.5s;
     }
+    a {
+      position: absolute;
+      bottom: 1em;
+      margin-left: 1em;
+    }
   }
 
-  .buy-sell-rent {
-    background-image: url('../../assets/images/buy_sell_rent.jpg');
+  .market {
+    background-image: url('../../assets/images/property_market.jpg');
   }
   .manage {
-    background-image: url('../../assets/images/property_management.webp');
+    background-image: url('../../assets/images/property_manage.webp');
   }
   .build {
-    background-image: url('../../assets/images/construction.jpg');
+    background-image: url('../../assets/images/property_build.jpg');
   }
 }

@@ -36,23 +36,34 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-lg="4">
-        <div class="business buy-sell-rent backgroud-image-shade">
-          <div class="gradient ion-activatable">
+        <div class="business market backgroud-image-shade">
+          <div class="gradient ion-activatable" [routerLink]="['/market']">
             <ion-ripple-effect></ion-ripple-effect>
+            <a>
+              BUY, SELL OR RENT <ion-icon name="paper-plane-outline"></ion-icon>
+            </a>
           </div>
         </div>
       </ion-col>
       <ion-col size="12" size-lg="4">
         <div class="business manage backgroud-image-shade">
-          <div class="gradient ion-activatable">
+          <div class="gradient ion-activatable" [routerLink]="['/manage']">
             <ion-ripple-effect></ion-ripple-effect>
+            <a>
+              PROPERTY MANAGMENT
+              <ion-icon name="paper-plane-outline"></ion-icon>
+            </a>
           </div>
         </div>
       </ion-col>
       <ion-col size="12" size-lg="4">
         <div class="business build backgroud-image-shade">
-          <div class="gradient ion-activatable">
+          <div class="gradient ion-activatable" [routerLink]="['/build']">
             <ion-ripple-effect></ion-ripple-effect>
+            <a>
+              PROPERTY CONSTRUCTION
+              <ion-icon name="paper-plane-outline"></ion-icon>
+            </a>
           </div>
         </div>
       </ion-col>
