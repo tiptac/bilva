@@ -16,30 +16,18 @@ div.know-more {
 
     .description {
       padding: 1em;
-      display: none;
     }
 
     .gradient {
       cursor: pointer;
       background: linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.3) 50%,
-        rgba(0, 0, 0, 0.3) 100%
-      );
-    }
-    .gradient:hover {
-      background: linear-gradient(
-        90deg,
         rgba(0, 0, 0, 0.7) 0%,
         rgba(0, 0, 0, 0.7) 50%,
         rgba(0, 0, 0, 0.7) 100%
       );
-      transition-duration: 0.5s;
-      .description {
-        display: inline-block;
-      }
     }
+
     a {
       position: absolute;
       bottom: 1em;

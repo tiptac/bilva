@@ -19,17 +19,17 @@ export const appRoutes: Route[] = [
   {
     path: 'market',
     loadComponent: () =>
-      import('./market/market.component').then((m) => m.MarketComponent),
+      import('./business/market/market.component').then((m) => m.MarketComponent),
   },
   {
     path: 'manage',
     loadComponent: () =>
-      import('./manage/manage.component').then((m) => m.ManageComponent),
+      import('./business/manage/manage.component').then((m) => m.ManageComponent),
   },
   {
     path: 'build',
     loadComponent: () =>
-      import('./build/build.component').then((m) => m.BuildComponent),
+      import('./business/build/build.component').then((m) => m.BuildComponent),
   },
   {
     path: '**',

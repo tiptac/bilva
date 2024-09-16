@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RefresherCustomEvent } from '@ionic/angular';
+import { MenuController, RefresherCustomEvent } from '@ionic/angular';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
@@ -19,10 +19,14 @@ export class AppComponent {
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   currentYear = new Date().getFullYear();
-  constructor() {}
+  constructor(private menuCtrl: MenuController) {}
 
   handleRefresh(event: RefresherCustomEvent) {
     window.location.reload();
     event.target.complete();
+  }
+
+  closeMenu() {
+    this.menuCtrl.close();
   }
 }

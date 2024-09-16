@@ -5,19 +5,64 @@
         <ion-icon name="home"></ion-icon> Bilva Groups</ion-title
       >
       <ion-buttons slot="end">
-        <ion-button [routerLinkActive]="['home']" [routerLink]="['home']">
+        <ion-button
+          class="d-none d-lg-block"
+          [routerLinkActive]="['home']"
+          [routerLink]="['home']"
+        >
           Home
         </ion-button>
-        <ion-button [routerLinkActive]="['contact']" [routerLink]="['contact']">
+        <ion-button
+          class="d-none d-lg-block"
+          [routerLinkActive]="['contact']"
+          [routerLink]="['contact']"
+        >
           Contact
         </ion-button>
-        <ion-button [routerLinkActive]="['about']" [routerLink]="['about']">
+        <ion-button
+          class="d-none d-lg-block"
+          [routerLinkActive]="['about']"
+          [routerLink]="['about']"
+        >
           About
         </ion-button>
+        <ion-menu-button class="d-lg-none" auto-hide="false"></ion-menu-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">
+  <ion-menu side="end" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title></ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item
+          [routerLinkActive]="['home']"
+          [routerLink]="['home']"
+          (click)="closeMenu()"
+        >
+          HOME
+        </ion-item>
+        <ion-item
+          [routerLinkActive]="['contact']"
+          [routerLink]="['contact']"
+          (click)="closeMenu()"
+        >
+          CONTACT
+        </ion-item>
+        <ion-item
+          [routerLinkActive]="['about']"
+          [routerLink]="['about']"
+          (click)="closeMenu()"
+        >
+          ABOUT
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-content class="ion-padding" id="main-content">
     <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
