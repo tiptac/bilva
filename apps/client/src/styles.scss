@@ -137,14 +137,16 @@ a:hover {
   cursor: pointer;
 }
 
+$gradient-opacity: 0.7;
+
 .gradient {
   min-height: 100%;
   height: auto;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(0, 0, 0, $gradient-opacity) 0%,
+    rgba(0, 0, 0, $gradient-opacity) 50%,
+    rgba(0, 0, 0, $gradient-opacity) 100%
   );
   display: flex;
 }
@@ -160,9 +162,9 @@ a:hover {
   .gradient {
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.5) 50%,
-      rgba(255, 255, 255, 0.5) 100%
+      rgba(255, 255, 255, $gradient-opacity) 0%,
+      rgba(255, 255, 255, $gradient-opacity) 50%,
+      rgba(255, 255, 255, $gradient-opacity) 100%
     );
   }
 }
