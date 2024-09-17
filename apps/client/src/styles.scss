@@ -142,9 +142,9 @@ a:hover {
   height: auto;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.7) 50%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 100%
   );
   display: flex;
 }
@@ -154,4 +154,15 @@ a:hover {
   background-repeat: repeat-y;
   background-size: cover;
   background-color: transparent;
+}
+
+@media (prefers-color-scheme: light) {
+  .gradient {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+  }
 }
