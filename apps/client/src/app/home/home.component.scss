@@ -39,3 +39,8 @@ img {
 ion-card {
   height: 100%;
 }
+
+ion-card:hover {
+  transform: rotateY(360deg);
+  transition: transform 2s;
+}
