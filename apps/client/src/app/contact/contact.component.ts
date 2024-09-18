@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -8,8 +8,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'bilva-contact',
@@ -21,14 +20,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactComponent {
   contactUsform!: FormGroup;
 
-  constructor(
-    private route: ActivatedRoute,
-    private http: HttpClient,
-    private fb: FormBuilder
-  ) {
-    this.route.queryParams.subscribe((queryParams) => {
-      console.log(queryParams);
-    });
+  constructor(private http: HttpClient, private fb: FormBuilder) {
     this.init();
   }
 
