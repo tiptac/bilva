@@ -142,13 +142,14 @@ $gradient-opacity: 0.7;
 .gradient {
   min-height: 100%;
   height: auto;
+  display: flex;
+
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, $gradient-opacity) 0%,
     rgba(0, 0, 0, $gradient-opacity) 50%,
     rgba(0, 0, 0, $gradient-opacity) 100%
   );
-  display: flex;
 }
 
 .backgroud-image-shade {
@@ -156,15 +157,4 @@ $gradient-opacity: 0.7;
   background-repeat: repeat-y;
   background-size: cover;
   background-color: transparent;
-}
-
-@media (prefers-color-scheme: light) {
-  .gradient {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, $gradient-opacity) 0%,
-      rgba(255, 255, 255, $gradient-opacity) 50%,
-      rgba(255, 255, 255, $gradient-opacity) 100%
-    );
-  }
 }
