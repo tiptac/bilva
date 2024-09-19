@@ -4,8 +4,8 @@
  */
 
 import express from 'express';
-import { router as routes } from './routes';
 import session from 'express-session';
+import { router as routes } from './routes';
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(
     saveUninitialized: false,
     resave: false,
     rolling: true,
-  }),
+  })
 );
 
 app.use('/', routes);
