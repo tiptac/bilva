@@ -11,3 +11,14 @@ const googleFormsMiddleware = httpProxyMiddleware.createProxyMiddleware({
 });
 
 router.post('/', googleFormsMiddleware);
+
+router.get('/', (req, res) => {
+  console.log(process.env);
+  res.json({
+    url: process.env.contact_us_form_url,
+    fullName: process.env.contact_us_form_field_fullName,
+    phone: process.env.contact_us_form_field_phone,
+    email: process.env.contact_us_form_field_email,
+    message: process.env.contact_us_form_field_message,
+  });
+});
