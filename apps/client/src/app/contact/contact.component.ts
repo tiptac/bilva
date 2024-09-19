@@ -9,7 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { Observable, share, shareReplay, switchMap } from 'rxjs';
+import { Observable, shareReplay, switchMap } from 'rxjs';
 
 const requestCallBackUrl = 'api/request-call-back';
 
@@ -31,6 +31,9 @@ export class ContactComponent {
   contactUsform!: FormGroup;
 
   requestCallBackDetails$: Observable<RequestCallBackDetails>;
+  success = false;
+  error = false;
+  inProgress = false;
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.init();
@@ -40,6 +43,8 @@ export class ContactComponent {
   }
 
   requestCallBack() {
+    this.inProgress = true;
+    this.success = this.error = false;
     this.requestCallBackDetails$
       .pipe(
         switchMap((requestCallBackDetails) => {
@@ -66,8 +71,15 @@ export class ContactComponent {
         })
       )
       .subscribe({
+        next: () => {
+          this.success = true;
+          this.inProgress = false;
+          this.contactUsform.disable();
+        },
         error: (err) => {
           console.error(err);
+          this.error = true;
+          this.inProgress = false;
         },
       });
   }
