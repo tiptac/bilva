@@ -53,13 +53,16 @@
 
                   <ion-item>
                     <ion-button
-                      *ngIf="!success"
                       color="dark"
-                      [disabled]="contactUsform.invalid || inProgress"
+                      [disabled]="
+                        contactUsform.invalid || inProgress || success
+                      "
                       (click)="requestCallBack()"
                     >
                       REQUEST CALL BACK
                     </ion-button>
+                  </ion-item>
+                  <ion-item *ngIf="success || error">
                     <ion-text *ngIf="success" color="success">
                       Thank you! Will contact you soon !!
                     </ion-text>
