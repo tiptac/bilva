@@ -86,9 +86,20 @@ export class ContactComponent {
 
   private init() {
     this.contactUsform = this.fb.group({
-      fullName: this.fb.control('', { validators: [Validators.required] }),
+      fullName: this.fb.control('', {
+        validators: [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern('[a-zA-Z][a-zA-Z ]+'),
+        ],
+      }),
       phone: this.fb.control('', {
-        validators: [Validators.required, Validators.pattern('[0-9]+')],
+        validators: [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(10),
+          Validators.pattern('[0-9]+'),
+        ],
       }),
       email: this.fb.control('', {
         validators: [Validators.required, Validators.email],

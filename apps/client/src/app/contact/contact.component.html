@@ -17,7 +17,7 @@
                     <ion-input
                       formControlName="fullName"
                       placeholder="Full Name"
-                      errorText="Required"
+                      errorText="Required valid name with minimum 2 characters"
                     >
                     </ion-input>
                   </ion-item>
@@ -27,7 +27,7 @@
                       type="tel"
                       formControlName="phone"
                       placeholder="Phone Number"
-                      errorText="Required Valid Phone Number"
+                      errorText="Required Valid 10 digit Phone Number"
                     >
                     </ion-input>
                   </ion-item>
@@ -95,11 +95,11 @@
                   >
                     <ion-icon name="logo-whatsapp"></ion-icon> +91 9916132424
                   </a>
- 
+
                   <br />
                   <a href="mailto:naresh.nj@gmail.com" target="_blank">
                     <ion-icon name="mail-outline"></ion-icon>
-                    naresh.nj&amp;gmail.com
+                    {{ 'naresh.nj@gmail.com' }}
                   </a>
                 </p>
               </div>
