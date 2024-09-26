@@ -1,0 +1,17 @@
+FROM node:20.17.0
+COPY dist/apps/server/ /
+EXPOSE 3000
+ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/bilva?schema=public"
+ENV contact_us_form_url="https://docs.google.com/forms/d/e/1FAIpQLSdUOLjkDv9dIWrCHFiVytnqyfEJ5c3sAEOMMiAxj2hd1aGAPA/formResponse"
+ENV contact_us_form_field_fullName="entry.1797770478"
+ENV contact_us_form_field_phone="entry.2110661532"
+ENV contact_us_form_field_email="entry.1373912950"
+ENV contact_us_form_field_message="entry.656592789"
+RUN npm i -g pnpm
+RUN pnpm i
+CMD ["node","main.js", "--port 3000"]
+#node --env.file=.env main.js
+
+
+
+
