@@ -4,13 +4,9 @@
 
 div.hero {
   background-image: url('../../assets/images/content-flip.jpg');
-  height: 100%;
-  max-height: 100%;
-  width: 100%;
-
-  .quote {
-    font-size: 2.5em;
-  }
+}
+.full-screen {
+  display: flex;
 }
 
 div.know-more {
@@ -47,15 +43,11 @@ ion-card {
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 50%
+    rgba(0, 0, 0, 0) 25%
   );
 }
 .gradient-bottom {
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 10%);
 }
 .botton-align {
   position: absolute;
@@ -66,3 +58,12 @@ ion-card {
 //  transform: rotateY(360deg);
 // transition: transform 2s;
 // }
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
