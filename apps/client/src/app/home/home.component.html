@@ -1,6 +1,10 @@
 <div class="page hero backgroud-image-shade">
-  <div class="gradient">
-    <ion-grid>
+  <div
+    class="gradient"
+    [class.gradient-top-left]="!isBottonAlign"
+    [class.gradient-bottom]="isBottonAlign"
+  >
+    <ion-grid [class.botton-align]="isBottonAlign">
       <ion-row>
         <ion-col size="12" class="left">
           <ion-text>

@@ -43,12 +43,23 @@ ion-card {
   height: 100%;
 }
 
-.gradient {
+.gradient-top-left {
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.5) 0%,
     rgba(0, 0, 0, 0) 50%
   );
+}
+.gradient-bottom {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.botton-align {
+  position: absolute;
+  bottom: 0;
 }
 
 //ion-card:hover {

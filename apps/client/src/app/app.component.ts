@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MenuController, RefresherCustomEvent } from '@ionic/angular';
+import { ScreenSizeService } from '../common/services/screen-size-service';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
@@ -19,7 +20,15 @@ export class AppComponent {
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   currentYear = new Date().getFullYear();
-  constructor(private menuCtrl: MenuController) {}
+  constructor(
+    private menuCtrl: MenuController,
+    private screenSizeService: ScreenSizeService
+  ) {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenSizeService.onResize();
+  }
 
   handleRefresh(event: RefresherCustomEvent) {
     window.location.reload();
