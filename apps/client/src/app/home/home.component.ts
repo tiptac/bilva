@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { ScreenSizeService } from '../../common/services/screen-size-service';
 import { ScreenSize } from '../../common/models/screen-size';
+import { HeroComponent } from './hero/hero.component';
 
 @Component({
   selector: 'bilva-home',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterModule],
+  imports: [CommonModule, IonicModule, RouterModule, HeroComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
