@@ -137,22 +137,20 @@ a:hover {
   cursor: pointer;
 }
 
-$gradient-opacity: 0;
+$gradient-opacity: 0.7;
 
 .gradient {
   min-height: 100%;
   height: auto;
   display: flex;
-  background: linear-gradient(
-    90deg,
+  background-color: linear-gradient(
     rgba(0, 0, 0, $gradient-opacity) 0%,
-    rgba(0, 0, 0, $gradient-opacity) 50%,
     rgba(0, 0, 0, $gradient-opacity) 100%
   );
 }
 
 .backgroud-image-shade {
-  background-position: center;
+  background-position: top;
   background-repeat: repeat-y;
   background-size: cover;
   background-color: transparent;

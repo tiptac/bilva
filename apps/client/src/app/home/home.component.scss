@@ -3,9 +3,7 @@
 }
 
 div.hero {
-  background-image: url('../../assets/images/crop.png');
-
-  min-height: 135%;
+  background-image: url('../../assets/images/content-flip.jpg');
   height: 100%;
   max-height: 100%;
   width: 100%;
@@ -43,6 +41,14 @@ img {
 
 ion-card {
   height: 100%;
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
 }
 
 //ion-card:hover {
