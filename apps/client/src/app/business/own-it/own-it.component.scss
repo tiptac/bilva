@@ -1,7 +1,11 @@
+:host {
+  overflow-y: scroll;
+}
+
 img {
-  min-height: 15em;
-  height: 15em;
-  max-height: 15em;
+  min-height: 25em;
+  height: 25em;
+  max-height: 25em;
   width: 100%;
 }
 
