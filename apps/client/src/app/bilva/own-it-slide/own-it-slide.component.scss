@@ -1,5 +1,31 @@
 div {
   height: 100%;
   min-height: 100%;
-  background: linear-gradient(135deg, purple, blue);
+}
+
+div.hero {
+  background-image: url('../../../assets/images/content-flip.jpg');
+}
+.full-screen {
+  display: flex;
+}
+
+.gradient-top-left {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 25%
+  );
+}
+.gradient-bottom {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 10%);
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
