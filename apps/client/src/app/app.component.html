@@ -4,34 +4,50 @@
       <ion-title [routerLink]="['home']">
         <img
           class="left"
-          alt="BUY SELL RENT"
+          alt="The Bilva Group"
           src="assets/images/logo2.png"
           width="200"
           height="38"
         />
       </ion-title>
       <ion-buttons slot="end">
+        @for (page of appPages;track $index) { @if (page.url) {
         <ion-button
           class="ion-hide-lg-down"
-          [routerLinkActive]="['home']"
-          [routerLink]="['home']"
+          [routerLinkActive]="'active'"
+          [routerLink]="page.url"
         >
-          Home
+          {{ page.title }}
         </ion-button>
-        <ion-button
-          class="ion-hide-lg-down"
-          [routerLinkActive]="['contact']"
-          [routerLink]="['contact']"
+        } @else {
+
+        <ion-button class="ion-hide-lg-down" [id]="'md-' + page.title">
+          {{ page.title }}</ion-button
         >
-          Contact
-        </ion-button>
-        <ion-button
-          class="ion-hide-lg-down"
-          [routerLinkActive]="['about']"
-          [routerLink]="['about']"
+        <ion-popover
+          [trigger]="'md-' + page.title"
+          triggerAction="hover"
+          [dismissOnSelect]="true"
         >
-          About
-        </ion-button>
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                @for (child of page.child; track $index) {
+                <ion-item
+                  [button]="true"
+                  [detail]="false"
+                  [routerLinkActive]="'active'"
+                  [routerLink]="child.url"
+                >
+                  {{ child.title }}
+                </ion-item>
+                }
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+
+        } }
         <ion-menu-button
           class="ion-hide-lg-up"
           auto-hide="false"
@@ -47,27 +63,39 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-list>
+        @for (page of appPages;track $index) { @if (page.url) {
         <ion-item
-          [routerLinkActive]="['home']"
-          [routerLink]="['home']"
+          [routerLinkActive]="'active'"
+          [routerLink]="page.url"
           (click)="closeMenu()"
         >
-          HOME
+          {{ page.title }}
         </ion-item>
-        <ion-item
-          [routerLinkActive]="['contact']"
-          [routerLink]="['contact']"
-          (click)="closeMenu()"
+        }@else {
+        <ion-item [id]="'ios-' + page.title"> {{ page.title }}</ion-item>
+        <ion-popover
+          [trigger]="'ios-' + page.title"
+          triggerAction="hover"
+          [dismissOnSelect]="true"
         >
-          CONTACT
-        </ion-item>
-        <ion-item
-          [routerLinkActive]="['about']"
-          [routerLink]="['about']"
-          (click)="closeMenu()"
-        >
-          ABOUT
-        </ion-item>
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                @for (child of page.child; track $index) {
+                <ion-item
+                  [button]="true"
+                  [detail]="false"
+                  [routerLinkActive]="'active'"
+                  [routerLink]="child.url"
+                >
+                  {{ child.title }}
+                </ion-item>
+                }
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+        } }
       </ion-list>
     </ion-content>
   </ion-menu>

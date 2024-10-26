@@ -19,12 +19,16 @@ export const appRoutes: Route[] = [
   {
     path: 'market',
     loadComponent: () =>
-      import('./business/market/market.component').then((m) => m.MarketComponent),
+      import('./business/market/market.component').then(
+        (m) => m.MarketComponent
+      ),
   },
   {
     path: 'manage',
     loadComponent: () =>
-      import('./business/manage/manage.component').then((m) => m.ManageComponent),
+      import('./business/manage/manage.component').then(
+        (m) => m.ManageComponent
+      ),
   },
   {
     path: 'build',
@@ -33,6 +37,9 @@ export const appRoutes: Route[] = [
   },
   {
     path: '**',
-    redirectTo: 'home',
+    loadComponent: () =>
+      import(
+        './shared/components/under-construction/under-construction.component'
+      ).then((m) => m.UnderConstructionComponent),
   },
 ];

@@ -15,14 +15,7 @@ ion-title {
   cursor: pointer;
 }
 
-ion-button.about,
-ion-button.home,
-ion-button.contact {
-  color: burlywood;
-}
-
-ion-item.about,
-ion-item.home,
-ion-item.contact {
+ion-button.active,
+ion-item.active {
   color: burlywood;
 }

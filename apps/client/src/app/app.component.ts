@@ -10,14 +10,18 @@ import { ScreenSizeService } from '../common/services/screen-size-service';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'HOME', url: ['home'] },
+    { title: 'ABOUT US', url: ['about'] },
+    {
+      title: 'BUSINESS VERTICALS',
+      child: [
+        { title: 'OWN IT', url: ['own-it'] },
+        { title: 'THE BIG DAY', url: ['the-big-day'] },
+      ],
+    },
+    { title: 'CAREER', url: ['career'] },
+    { title: 'CONTACT US', url: ['contact'] },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   currentYear = new Date().getFullYear();
   constructor(
