@@ -84,6 +84,7 @@
                   [button]="true"
                   [detail]="false"
                   [routerLinkActive]="'active'"
+                  (click)="closeMenu()"
                   [routerLink]="child.url"
                 >
                   {{ child.title }}
