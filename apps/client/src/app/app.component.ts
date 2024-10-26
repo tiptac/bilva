@@ -10,17 +10,17 @@ import { ScreenSizeService } from '../common/services/screen-size-service';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'HOME', url: ['bilva'] },
-    { title: 'ABOUT US', url: ['about'] },
+    { title: 'HOME', url: ['/bilva'] },
+    { title: 'ABOUT US', url: ['/about'] },
     {
       title: 'BUSINESS VERTICALS',
       child: [
-        { title: 'OWN IT', url: ['business', 'own-it'] },
-        { title: 'THE BIG DAY', url: ['business', 'the-big-day'] },
+        { title: 'OWN IT', url: ['/business', 'own-it'] },
+        { title: 'THE BIG DAY', url: ['/business', 'the-big-day'] },
       ],
     },
-    { title: 'CAREER', url: ['career'] },
-    { title: 'CONTACT US', url: ['contact'] },
+    { title: 'CAREER', url: ['/career'] },
+    { title: 'CONTACT US', url: ['/contact'] },
   ];
 
   currentYear = new Date().getFullYear();
