@@ -15,8 +15,8 @@ export class AppComponent {
     {
       title: 'BUSINESS VERTICALS',
       child: [
-        { title: 'OWN IT', url: ['own-it'] },
-        { title: 'THE BIG DAY', url: ['the-big-day'] },
+        { title: 'OWN IT', url: ['business', 'own-it'] },
+        { title: 'THE BIG DAY', url: ['business', 'the-big-day'] },
       ],
     },
     { title: 'CAREER', url: ['career'] },
