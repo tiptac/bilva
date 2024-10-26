@@ -29,10 +29,24 @@ export const routes: Route[] = [
     pathMatch: 'full',
   },
   {
-    path: '**',
+    path: 'page-not-found',
+    loadComponent: () =>
+      import('./common/page-not-found/page-not-found.component').then(
+        (m) => m.PageNotFoundComponent
+      ),
+  },
+  {
+    path: 'under-construction',
     loadComponent: () =>
       import('./common/under-construction/under-construction.component').then(
         (m) => m.UnderConstructionComponent
+      ),
+  },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./common/page-not-found/page-not-found.component').then(
+        (m) => m.PageNotFoundComponent
       ),
   },
 ];

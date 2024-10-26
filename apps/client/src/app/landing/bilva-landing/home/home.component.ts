@@ -20,4 +20,4 @@ register();
   styleUrl: './home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class BilvaComponent {}
+export class HomeComponent {}

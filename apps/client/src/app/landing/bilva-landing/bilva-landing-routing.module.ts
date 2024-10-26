@@ -11,7 +11,7 @@ export const routes: Route[] = [
       {
         path: 'home',
         loadComponent: () =>
-          import('./home/home.component').then((m) => m.BilvaComponent),
+          import('./home/home.component').then((m) => m.HomeComponent),
       },
       {
         path: 'business',
@@ -43,16 +43,23 @@ export const routes: Route[] = [
           import('./contact/contact.component').then((m) => m.ContactComponent),
       },
       {
-        path: '**',
+        path: 'career',
         loadComponent: () =>
           import(
-            '../../common/under-construction/under-construction.component'
+            './../../common/under-construction/under-construction.component'
           ).then((m) => m.UnderConstructionComponent),
       },
       {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
+      },
+      {
+        path: '**',
+        loadComponent: () =>
+          import('../../common/page-not-found/page-not-found.component').then(
+            (m) => m.PageNotFoundComponent
+          ),
       },
     ],
   },
