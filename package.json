@@ -4,6 +4,7 @@
   "license": "MIT",
   "homepage": "https://tiptac.github.io/bilva",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "nx": "nx",
     "build": "pnpm nx run-many -t build",
     "lint": "pnpm nx run-many -t lint",
@@ -12,11 +13,13 @@
     "serve": "pnpm nx run-many -t serve",
     "predeploy": "pnpm build -p client --baseHref /bilva/",
     "deploy": "gh-pages -d dist/apps/client",
-    "prisma": "prisma migrate dev -n init && prisma generate"
+    "prisma": "prisma migrate dev -n init && prisma generate",
+    "postinstall": "pnpm prisma"
   },
   "private": true,
   "engines": {
-    "node": ">=20.12.2"
+    "node": ">=20.12.2",
+    "pnpm": ">=8.10.5"
   },
   "dependencies": {
     "@angular/animations": "~18.2.0",
@@ -45,6 +48,7 @@
     "sha1": "^1.1.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
+    "swiper": "^11.1.14",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
@@ -89,7 +93,6 @@
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
     "@typescript-eslint/utils": "^8.0.0-alpha.28",
-    "angular:component@latest": "link:@nx/angular:component@latest",
     "esbuild": "^0.19.2",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",
