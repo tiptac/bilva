@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BilvaComponent } from './bilva.component';
+import { OwnItLandingComponent } from './own-it-landing.component';
 
-describe('BilvaComponent', () => {
-  let component: BilvaComponent;
-  let fixture: ComponentFixture<BilvaComponent>;
+describe('OwnItLandingComponent', () => {
+  let component: OwnItLandingComponent;
+  let fixture: ComponentFixture<OwnItLandingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BilvaComponent],
+      imports: [OwnItLandingComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BilvaComponent);
+    fixture = TestBed.createComponent(OwnItLandingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

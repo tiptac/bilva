@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonButton, IonText } from '@ionic/angular/standalone';
+import { appRoutes } from '../../app.routes';
 
 @Component({
   selector: 'bilva-under-construction',
@@ -10,4 +11,6 @@ import { IonButton, IonText } from '@ionic/angular/standalone';
   templateUrl: './under-construction.component.html',
   styleUrl: './under-construction.component.scss',
 })
-export class UnderConstructionComponent {}
+export class UnderConstructionComponent {
+  appRoutes = appRoutes;
+}

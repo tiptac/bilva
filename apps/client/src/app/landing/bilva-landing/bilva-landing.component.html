@@ -1,0 +1,170 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title [routerLink]="appRoutes.bilva.home">
+        <img
+          class="left logo"
+          alt="The Bilva Group"
+          src="/assets/images/bilva.png"
+        />
+      </ion-title>
+      <ion-buttons slot="end">
+        @for (page of appPages;track $index) { @if (page.url) {
+        <ion-button
+          class="ion-hide-lg-down"
+          [routerLinkActive]="'active'"
+          [routerLink]="page.url"
+        >
+          {{ page.title }}
+        </ion-button>
+        } @else {
+
+        <ion-button class="ion-hide-lg-down" [id]="'md-' + page.title">
+          {{ page.title }}
+        </ion-button>
+        <ion-popover
+          [trigger]="'md-' + page.title"
+          triggerAction="hover"
+          [dismissOnSelect]="true"
+        >
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                @for (child of page.child; track $index) {
+                <ion-item
+                  [button]="true"
+                  [detail]="false"
+                  [routerLinkActive]="'active'"
+                  [routerLink]="child.url"
+                >
+                  {{ child.title }}
+                </ion-item>
+                }
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+
+        } }
+        <ion-menu-button
+          class="ion-hide-lg-up"
+          auto-hide="false"
+        ></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-menu side="end" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title></ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        @for (page of appPages;track $index) { @if (page.url) {
+        <ion-item
+          [routerLinkActive]="'active'"
+          [routerLink]="page.url"
+          (click)="closeMenu()"
+        >
+          {{ page.title }}
+        </ion-item>
+        }@else {
+        <ion-item [id]="'ios-' + page.title"> {{ page.title }}</ion-item>
+        <ion-popover
+          [trigger]="'ios-' + page.title"
+          triggerAction="hover"
+          [dismissOnSelect]="true"
+        >
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                @for (child of page.child; track $index) {
+                <ion-item
+                  [button]="true"
+                  [detail]="false"
+                  [routerLinkActive]="'active'"
+                  (click)="closeMenu()"
+                  [routerLink]="child.url"
+                >
+                  {{ child.title }}
+                </ion-item>
+                }
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+        } }
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-content class="ion-padding" id="main-content">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col class="ion-no-padding" size="12" [sizeLg]="4" class="left">
+          </ion-col>
+          <ion-col
+            class="ion-no-padding"
+            size="12"
+            [sizeLg]="4"
+            class="ion-text-center"
+          >
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <a
+                    href="https://www.instagram.com/bilva_groups"
+                    target="_blank"
+                  >
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </ion-col>
+                <ion-col>
+                  <a
+                    href="https://www.instagram.com/bilva_groups"
+                    target="_blank"
+                  >
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </ion-col>
+                <ion-col>
+                  <a href="tel:9916132424" target="_blank">
+                    <ion-icon name="call-outline"></ion-icon>
+                  </a>
+                </ion-col>
+                <ion-col>
+                  <a href="mailto:naresh.nj@gmail.com" target="_blank">
+                    <ion-icon name="mail-outline"></ion-icon>
+                  </a>
+                </ion-col>
+                <ion-col>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=9916132424"
+                    target="_blank"
+                  >
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                  </a>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+          <ion-col
+            class="ion-no-padding"
+            size="12"
+            [sizeLg]="4"
+            class="ion-text-right copyright"
+          >
+            Copyright © {{ currentYear }} Bilva. All Rights Reserved.
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>

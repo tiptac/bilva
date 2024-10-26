@@ -1,0 +1,26 @@
+.copyright {
+  font-size: x-small;
+}
+
+.address {
+  font-size: smaller;
+  padding-left: 2em;
+}
+
+address {
+  justify-content: left;
+}
+
+ion-title {
+  cursor: pointer;
+}
+
+ion-button.active,
+ion-item.active {
+  color: burlywood;
+}
+
+.logo {
+  width: 200px;
+  object-fit: cover;
+}
