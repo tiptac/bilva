@@ -2,11 +2,6 @@
 @import 'swiper/scss/navigation';
 @import 'swiper/scss/pagination';
 
-:host {
-  background-color: white;
-  color: black;
-}
-
 :host,
 swiper-container {
   height: 100%;
