@@ -3,8 +3,7 @@
   min-height: 100%;
 }
 img {
-  max-width: 100%;
-  width: max-content;
+  max-width: 95%;
 }
 
 .bilva-bilva-slide {
@@ -22,6 +21,9 @@ img {
 
 .tagline {
   text-align: center;
-  letter-spacing: 0.9em;
-  max-width: 100%;
+  text-align-last: right;
+  text-overflow: clip;
+  text-wrap: nowrap;
+  letter-spacing: 0.6rem;
+  margin-left: 10px;
 }
