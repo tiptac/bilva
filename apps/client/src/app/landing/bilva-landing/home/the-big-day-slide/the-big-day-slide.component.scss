@@ -1,9 +1,31 @@
-:host {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-
+div {
   height: 100%;
-  width: 100%;
+  min-height: 100%;
+}
+
+div.hero {
+  background-image: url('../../../../../assets/images/event-management.jpg');
+}
+.full-screen {
+  display: flex;
+}
+
+.gradient-top-left {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+.gradient-bottom {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 10%);
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
