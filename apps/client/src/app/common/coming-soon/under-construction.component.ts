@@ -11,6 +11,6 @@ import { appRoutes } from '../../app.routes';
   templateUrl: './under-construction.component.html',
   styleUrl: './under-construction.component.scss',
 })
-export class UnderConstructionComponent {
+export class ComingSoonComponent {
   appRoutes = appRoutes;
 }

@@ -46,8 +46,8 @@ export const routes: Route[] = [
         path: 'career',
         loadComponent: () =>
           import(
-            './../../common/under-construction/under-construction.component'
-          ).then((m) => m.UnderConstructionComponent),
+            '../../common/coming-soon/coming-soon.component'
+          ).then((m) => m.ComingSoonComponent),
       },
       {
         path: '',

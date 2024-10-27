@@ -38,8 +38,8 @@ export const routes: Route[] = [
   {
     path: 'under-construction',
     loadComponent: () =>
-      import('./common/under-construction/under-construction.component').then(
-        (m) => m.UnderConstructionComponent
+      import('./common/coming-soon/coming-soon.component').then(
+        (m) => m.ComingSoonComponent
       ),
   },
   {
