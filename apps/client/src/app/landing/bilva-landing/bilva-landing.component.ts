@@ -14,14 +14,14 @@ export class BilvaLandingComponent {
     { title: 'HOME', url: appRoutes.bilva.home },
     { title: 'ABOUT US', url: appRoutes.bilva.about },
     {
-      title: 'BUSINESS VERTICALS',
+      title: 'BUSINESS VERTICAL',
       child: [
         { title: 'OWN IT', url: appRoutes.bilva.business.ownIt },
         { title: 'THE BIG DAY', url: appRoutes.bilva.business.theBigDay },
       ],
     },
     { title: 'CAREER', url: appRoutes.bilva.career },
-    { title: 'CONTACT US', url: appRoutes.bilva.contact },
+    { title: 'CONTACT', url: appRoutes.bilva.contact },
   ];
 
   currentYear = new Date().getFullYear();

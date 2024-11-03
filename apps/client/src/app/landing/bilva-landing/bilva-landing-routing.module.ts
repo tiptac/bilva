@@ -19,14 +19,14 @@ export const routes: Route[] = [
           {
             path: 'own-it',
             loadComponent: () =>
-              import('./business/own-it/own-it.component').then(
+              import('./business-vertical/own-it/own-it.component').then(
                 (m) => m.OwnItComponent
               ),
           },
           {
             path: 'the-big-day',
             loadComponent: () =>
-              import('./business/the-big-day/the-big-day.component').then(
+              import('./business-vertical/the-big-day/the-big-day.component').then(
                 (m) => m.TheBigDayComponent
               ),
           },
