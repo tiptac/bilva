@@ -14,7 +14,7 @@ export const routes: Route[] = [
           import('./home/home.component').then((m) => m.HomeComponent),
       },
       {
-        path: 'business',
+        path: 'business-vertical',
         children: [
           {
             path: 'own-it',
