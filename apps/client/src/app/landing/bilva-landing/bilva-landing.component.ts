@@ -16,8 +16,8 @@ export class BilvaLandingComponent {
     {
       title: 'BUSINESS VERTICAL',
       child: [
-        { title: 'OWN IT', url: appRoutes.bilva.business.ownIt },
-        { title: 'THE BIG DAY', url: appRoutes.bilva.business.theBigDay },
+        { title: 'Realty Solutions', url: appRoutes.bilva.business.ownIt },
+        { title: 'Event Management', url: appRoutes.bilva.business.theBigDay },
       ],
     },
     { title: 'CAREER', url: appRoutes.bilva.career },

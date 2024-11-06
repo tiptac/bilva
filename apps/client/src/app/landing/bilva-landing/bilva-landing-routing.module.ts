@@ -17,14 +17,14 @@ export const routes: Route[] = [
         path: 'business-vertical',
         children: [
           {
-            path: 'own-it',
+            path: 'ownit',
             loadComponent: () =>
               import('./business-vertical/own-it/own-it.component').then(
                 (m) => m.OwnItComponent
               ),
           },
           {
-            path: 'the-big-day',
+            path: 'thebigday',
             loadComponent: () =>
               import('./business-vertical/the-big-day/the-big-day.component').then(
                 (m) => m.TheBigDayComponent
