@@ -3,9 +3,14 @@ div {
   min-height: 100%;
 }
 
-div.hero {
+.backgroud-image-shade.landscape {
   background-image: url('../../../../../assets/images/event-management.jpg');
 }
+
+.backgroud-image-shade.portrait {
+  background-image: url('../../../../../assets/images/event-management-p.jpg');
+}
+
 .full-screen {
   display: flex;
 }

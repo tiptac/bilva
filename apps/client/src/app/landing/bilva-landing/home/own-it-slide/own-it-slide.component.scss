@@ -3,7 +3,11 @@ div {
   min-height: 100%;
 }
 
-.backgroud-image-shade {
+.backgroud-image-shade.landscape {
+  background-image: url('../../../../../assets/images/own-it.jpg');
+}
+
+.backgroud-image-shade.portrait {
   background-image: url('../../../../../assets/images/own-it.jpg');
 }
 
@@ -24,7 +28,7 @@ div {
 
 .vertical-flex {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .flex-grow {
