@@ -3,9 +3,10 @@ div {
   min-height: 100%;
 }
 
-div.hero {
-  background-image: url('../../../../../assets/images/new4.jpeg');
+.backgroud-image-shade {
+  background-image: url('../../../../../assets/images/own-it.jpg');
 }
+
 .full-screen {
   display: flex;
 }
@@ -23,7 +24,7 @@ div.hero {
 
 .vertical-flex {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .flex-grow {
