@@ -8,12 +8,14 @@ import {
   IonCol,
   IonGrid,
   IonRow,
+  IonText,
 } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'bilva-own-it',
   standalone: true,
   imports: [
+    IonText,
     CommonModule,
     IonGrid,
     IonRow,
@@ -22,6 +24,7 @@ import {
     IonCardTitle,
     IonCardHeader,
     IonCardContent,
+    IonText,
   ],
   templateUrl: './own-it.component.html',
   styleUrl: './own-it.component.scss',

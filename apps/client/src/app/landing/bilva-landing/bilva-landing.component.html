@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-header>
+  <ion-header mode="md">
     <ion-toolbar>
       <ion-title [routerLink]="appRoutes.bilva.home" mode="md">
         <img
@@ -47,6 +47,7 @@
 
         } }
         <ion-menu-button
+          mode="md"
           class="ion-hide-lg-up"
           auto-hide="false"
         ></ion-menu-button>
@@ -54,7 +55,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-menu side="end" contentId="main-content">
-    <ion-header>
+    <ion-header mode="md">
       <ion-toolbar>
         <ion-title></ion-title>
       </ion-toolbar>
@@ -159,7 +160,8 @@
             class="ion-no-padding"
             size="12"
             [sizeLg]="4"
-            class="ion-text-center copyright">
+            class="ion-text-center copyright"
+          >
             <ion-text>
               Copyright© {{ currentYear }} The Bilva Group. All Rights Reserved
             </ion-text>
