@@ -1,26 +1,14 @@
 div {
-  height: 100vh;
-  width: 100vw;
-
+  height: 100%;
+  width: 100%;
 }
 
 .backgroud-image-shade.landscape {
   background-image: url('../../../../../assets/images/final13.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-
 }
 
 .backgroud-image-shade.portrait {
   background-image: url('../../../../../assets/images/final20.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
 }
 
 .full-screen {
