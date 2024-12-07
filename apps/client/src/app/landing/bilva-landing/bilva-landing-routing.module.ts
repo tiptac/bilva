@@ -49,14 +49,6 @@ export const routes: Route[] = [
             (m) => m.ComingSoonComponent
           ),
       },
-
-      {
-        path: '**',
-        loadComponent: () =>
-          import('../../common/page-not-found/page-not-found.component').then(
-            (m) => m.PageNotFoundComponent
-          ),
-      },
     ],
   },
 ];

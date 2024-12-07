@@ -10,14 +10,14 @@ export const routes: Route[] = [
       ),
   },
   {
-    path: 'own-it',
+    path: 'ownit',
     loadComponent: () =>
       import('./landing/own-it-landing/own-it-landing.component').then(
         (m) => m.OwnItLandingComponent
       ),
   },
   {
-    path: 'the-big-day',
+    path: 'thebigday',
     loadComponent: () =>
       import(
         './landing/the-big-day-landing/the-big-day-landing.component'
