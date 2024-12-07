@@ -50,7 +50,7 @@ export const routes: Route[] = [
   imports: [
     RouterModule.forRoot(routes, {
       preloadingStrategy: PreloadAllModules,
-      useHash: true,
+      useHash: false,
     }),
   ],
   exports: [RouterModule],
