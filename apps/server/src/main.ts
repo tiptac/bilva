@@ -23,8 +23,8 @@ app.use(
 
 app.use('/', routes);
 
-const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const host = process.env.HOST ?? '0.0.0.0';
+const port = process.env.PORT ? Number(process.env.PORT) : 8080;
 const server = app.listen(port, host, () => {
   console.log(`[ ready ] Listening at http://${host}:${port}/`);
 });
