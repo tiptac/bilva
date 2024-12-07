@@ -10,7 +10,7 @@ import { ScreenSizeService } from '../common/services/screen-size-service';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'HOME', url: ['/bilva'] },
+    { title: 'HOME', url: ['/'] },
     { title: 'ABOUT US', url: ['/about'] },
     {
       title: 'BUSINESS VERTICALS',

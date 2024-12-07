@@ -9,7 +9,7 @@ export const routes: Route[] = [
     component: BilvaLandingComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         loadComponent: () =>
           import('./home/home.component').then((m) => m.HomeComponent),
       },
@@ -26,9 +26,9 @@ export const routes: Route[] = [
           {
             path: 'thebigday',
             loadComponent: () =>
-              import('./business-vertical/the-big-day/the-big-day.component').then(
-                (m) => m.TheBigDayComponent
-              ),
+              import(
+                './business-vertical/the-big-day/the-big-day.component'
+              ).then((m) => m.TheBigDayComponent),
           },
         ],
       },
@@ -45,15 +45,11 @@ export const routes: Route[] = [
       {
         path: 'career',
         loadComponent: () =>
-          import(
-            '../../common/coming-soon/coming-soon.component'
-          ).then((m) => m.ComingSoonComponent),
+          import('../../common/coming-soon/coming-soon.component').then(
+            (m) => m.ComingSoonComponent
+          ),
       },
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-      },
+
       {
         path: '**',
         loadComponent: () =>

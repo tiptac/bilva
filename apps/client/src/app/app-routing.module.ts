@@ -3,7 +3,7 @@ import { PreloadAllModules, Route, RouterModule } from '@angular/router';
 
 export const routes: Route[] = [
   {
-    path: 'bilva',
+    path: '',
     loadChildren: () =>
       import('./landing/bilva-landing/bilva-landing.module').then(
         (m) => m.BilvaLandingModule
@@ -22,11 +22,6 @@ export const routes: Route[] = [
       import(
         './landing/the-big-day-landing/the-big-day-landing.component'
       ).then((m) => m.TheBigDayLandingComponent),
-  },
-  {
-    path: '',
-    redirectTo: 'bilva',
-    pathMatch: 'full',
   },
   {
     path: 'page-not-found',
