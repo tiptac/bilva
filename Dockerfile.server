@@ -1,6 +1,6 @@
 FROM node:20.17.0
-COPY dist/apps/server/ /
 EXPOSE 8080
+COPY dist/apps/server/ /
 ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/bilva?schema=public"
 ENV contact_us_form_url="https://docs.google.com/forms/d/e/1FAIpQLSdUOLjkDv9dIWrCHFiVytnqyfEJ5c3sAEOMMiAxj2hd1aGAPA/formResponse"
 ENV contact_us_form_field_fullName="entry.1797770478"
