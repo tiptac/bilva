@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonText, IonButton } from "@ionic/angular/standalone";
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'bilva-bilva-slide',
   standalone: true,
-  imports: [IonButton, IonText, CommonModule],
+  imports: [CommonModule, IonicModule],
   templateUrl: './bilva-slide.component.html',
   styleUrl: './bilva-slide.component.scss',
 })

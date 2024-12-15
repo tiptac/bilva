@@ -1,31 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardTitle,
-  IonCol,
-  IonGrid,
-  IonRow,
-  IonText,
-} from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'bilva-own-it',
   standalone: true,
-  imports: [
-    IonText,
-    CommonModule,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonCard,
-    IonCardTitle,
-    IonCardHeader,
-    IonCardContent,
-    IonText,
-  ],
+  imports: [CommonModule, IonicModule],
   templateUrl: './own-it.component.html',
   styleUrl: './own-it.component.scss',
 })
