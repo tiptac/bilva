@@ -1,5 +1,5 @@
 # use the latest version of the official nginx image as the base image
-FROM nginx:latest
+FROM nginx:1.27.3-alpine
 EXPOSE 80
 EXPOSE 443
 # copy the custom nginx configuration file to the container in the

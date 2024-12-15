@@ -1,4 +1,4 @@
-FROM node:20.17.0
+FROM node:20.18.1-alpine
 EXPOSE 8080
 COPY dist/apps/server/ /
 ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/bilva?schema=public"
@@ -7,8 +7,9 @@ ENV contact_us_form_field_fullName="entry.1797770478"
 ENV contact_us_form_field_phone="entry.2110661532"
 ENV contact_us_form_field_email="entry.1373912950"
 ENV contact_us_form_field_message="entry.656592789"
+ENV NODE_ENV="production"
 RUN npm i -g pnpm
-RUN pnpm i
+RUN pnpm i --prod
 CMD ["node", "main.js"]
 #node --env-file=.env main.js
 
