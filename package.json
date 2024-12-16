@@ -13,8 +13,7 @@
     "serve": "pnpm nx run-many -t serve",
     "predeploy": "pnpm build -p client --baseHref /bilva/",
     "deploy": "gh-pages -d dist/apps/client",
-    "prisma": "prisma migrate dev -n init && prisma generate",
-    "postinstall": "pnpm prisma"
+    "prisma": "prisma migrate dev -n init && prisma generate"
   },
   "private": true,
   "engines": {
