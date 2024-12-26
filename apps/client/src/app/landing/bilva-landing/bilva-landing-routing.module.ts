@@ -17,18 +17,28 @@ export const routes: Route[] = [
         path: 'business',
         children: [
           {
-            path: 'ownit',
-            loadComponent: () =>
-              import('./business-vertical/own-it/own-it.component').then(
-                (m) => m.OwnItComponent
-              ),
+            path: 'realtysolution',
+            children: [
+              {
+                path: 'ownit',
+                loadComponent: () =>
+                  import('./business-vertical/own-it/own-it.component').then(
+                    (m) => m.OwnItComponent
+                  ),
+              },
+            ],
           },
           {
-            path: 'thebigday',
-            loadComponent: () =>
-              import(
-                './business-vertical/the-big-day/the-big-day.component'
-              ).then((m) => m.TheBigDayComponent),
+            path: 'eventmanagement',
+            children: [
+              {
+                path: 'thebigday',
+                loadComponent: () =>
+                  import(
+                    './business-vertical/the-big-day/the-big-day.component'
+                  ).then((m) => m.TheBigDayComponent),
+              },
+            ],
           },
         ],
       },

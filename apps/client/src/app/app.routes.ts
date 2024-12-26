@@ -5,8 +5,8 @@ export const appRoutes = {
     career: ['/', 'career'],
     contact: ['/', 'contact'],
     business: {
-      ownIt: ['/', 'business', 'ownit'],
-      theBigDay: ['/', 'business', 'thebigday'],
+      ownIt: ['/', 'business', 'realtysolution', 'ownit'],
+      theBigDay: ['/', 'business', 'eventmanagement', 'thebigday'],
     },
   },
 };
