@@ -16,36 +16,45 @@
           [routerLinkActive]="'active'"
           [routerLink]="page.url"
         >
-          {{ page.title }}
+          {{ page.title() }}
         </ion-button>
-        } @else { @if(page.title === 'USER') {
-        <ion-button class="ion-hide-lg-down" [id]="'md-' + page.title">
+        } @else { @if(page.title() === 'USER') {
+        <ion-button class="ion-hide-lg-down" [id]="'md-' + page.title()">
           <ion-icon name="person-circle-outline"></ion-icon>
         </ion-button>
         }@else {
-        <ion-button class="ion-hide-lg-down" [id]="'md-' + page.title">
-          {{ page.title }}
+        <ion-button class="ion-hide-lg-down" [id]="'md-' + page.title()">
+          {{ page.title() }}
         </ion-button>
         }
 
         <ion-popover
-          [trigger]="'md-' + page.title"
+          [trigger]="'md-' + page.title()"
           triggerAction="hover"
           [dismissOnSelect]="true"
         >
           <ng-template>
             <ion-content>
               <ion-list>
-                @for (child of page.child; track $index) {
+                @for (child of page.child; track $index) { @if(child.visible())
+                { @if (child.url) {
                 <ion-item
                   [button]="true"
                   [detail]="false"
                   [routerLinkActive]="'active'"
                   [routerLink]="child.url"
                 >
-                  {{ child.title }}
+                  {{ child.title() }}
                 </ion-item>
-                }
+                } @else {
+                <ion-item
+                  [button]="true"
+                  [detail]="false"
+                  (click)="child.clicked()"
+                >
+                  {{ child.title() }}
+                </ion-item>
+                } } }
               </ion-list>
             </ion-content>
           </ng-template>
@@ -74,25 +83,27 @@
           [routerLink]="page.url"
           (click)="closeMenu()"
         >
-          {{ page.title }}
+          {{ page.title() }}
         </ion-item>
-        }@else { @if(page.title === 'USER') {
-        <ion-item [id]="'ios-' + page.title">
+        }@else { @if(page.title() === 'USER') {
+        <ion-item [id]="'ios-' + page.title()">
           <ion-icon name="person-circle-outline"></ion-icon>
         </ion-item>
         }@else {
-        <ion-item [id]="'ios-' + page.title"> {{ page.title }}</ion-item>
+        <ion-item [id]="'ios-' + page.title()"> {{ page.title() }}</ion-item>
         }
 
         <ion-popover
-          [trigger]="'ios-' + page.title"
+          [trigger]="'ios-' + page.title()"
           triggerAction="hover"
           [dismissOnSelect]="true"
         >
           <ng-template>
             <ion-content>
               <ion-list>
-                @for (child of page.child; track $index) {
+                @for (child of page.child; track $index) { @if(child.visible())
+                { @if (child.url) {
+
                 <ion-item
                   [button]="true"
                   [detail]="false"
@@ -100,9 +111,17 @@
                   (click)="closeMenu()"
                   [routerLink]="child.url"
                 >
-                  {{ child.title }}
+                  {{ child.title() }}
                 </ion-item>
-                }
+                } @else {
+                <ion-item
+                  [button]="true"
+                  [detail]="false"
+                  (click)="child.clicked()"
+                >
+                  {{ child.title() }}
+                </ion-item>
+                } } }
               </ion-list>
             </ion-content>
           </ng-template>

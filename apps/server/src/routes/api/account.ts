@@ -80,10 +80,6 @@ router.delete(
   logout
 );
 
-router.get('/', authN, (req: RequestWithUser, res) => {
-  res.json(req.user);
-});
-
 router.get('/:id', authN, async (req, res) => {
   try {
     const user = await userDtoService.getOtherUser(
