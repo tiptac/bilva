@@ -1,8 +1,9 @@
 import { Request } from 'express';
 import { UserDto } from '../dto/user';
+import { Token } from './token';
 
 export interface Session {
-  user?: UserDto;
+  token?: Token;
 }
 
 export type RequestWithSession = Request & { session: Session };

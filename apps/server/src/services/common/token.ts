@@ -8,15 +8,22 @@ export class TokenService {
     const accessToken = jwt.sign({ user }, SECRET_KEY, {
       expiresIn: '30 Minutes',
     });
-    const refreshToken = jwt.sign({ isRefreshToken: true, user }, SECRET_KEY, {
+    const refreshToken = jwt.sign({ user, isRefreshToken: true }, SECRET_KEY, {
       expiresIn: '1 Day',
     });
     return { accessToken, refreshToken };
   }
 
-  verify(token: string): JwtPayload | undefined {
+  verify(token: string, isRefreshToken = false): UserDto | undefined {
     try {
-      return <JwtPayload>jwt.verify(token, SECRET_KEY);
+      const jwtPayload = jwt.verify(token, SECRET_KEY);
+
+      const isRefreshTokenPayload = !!(jwtPayload as JwtPayload).isRefreshToken;
+      if (isRefreshToken === isRefreshTokenPayload) {
+        return (jwtPayload as JwtPayload).user;
+      } else {
+        throw new Error('Token is not valid');
+      }
     } catch (error) {
       console.error('Failed to verify token', error);
     }

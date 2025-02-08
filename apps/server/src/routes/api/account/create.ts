@@ -24,7 +24,6 @@ router.post('/', async (req: RequestWithSession, res) => {
       phone,
     });
 
-    req.session.user = user;
     res.status(StatusCodes.CREATED).json(user);
   } catch (error) {
     console.error('Failed to Signup', error);

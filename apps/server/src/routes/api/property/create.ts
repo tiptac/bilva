@@ -1,12 +1,11 @@
 import express from 'express';
 import { StatusCodes } from 'http-status-codes';
-
-import { RequestWithSession } from '../../../models/common/session';
+import { RequestWithUser } from '../../../models/common/session';
 import { propertyDtoService } from '../../../services/dto/property';
 
 export const router = express.Router();
 
-router.post('/', async (req: RequestWithSession, res) => {
+router.post('/', async (req: RequestWithUser, res) => {
   try {
     const summary = req.body?.summary;
     const description = req.body?.description;
@@ -16,7 +15,7 @@ router.post('/', async (req: RequestWithSession, res) => {
       res.sendStatus(StatusCodes.BAD_REQUEST);
       return;
     }
-    const user = await propertyDtoService.createProperty(req.session.user.id, {
+    const user = await propertyDtoService.createProperty(req.user.id, {
       summary,
       description,
       address,

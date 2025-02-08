@@ -5,35 +5,43 @@ import { tokenService } from '../services/common/token';
 import { UserRole } from '@prisma/client';
 
 export const authN = (
-  req: RequestWithSession,
+  req: RequestWithSession & RequestWithUser,
   res: Response,
   next: NextFunction
 ) => {
-  if (req.session.user) {
-    next();
+  if (req.session.token) {
+    const token = req.session.token;
+    if (!token) {
+      return res.sendStatus(StatusCodes.UNAUTHORIZED);
+    }
+    const accessToken = token.accessToken;
+    if (!accessToken) {
+      return res.sendStatus(StatusCodes.UNAUTHORIZED);
+    }
+    let user = tokenService.verify(accessToken);
+    if (!user) {
+      console.debug('access token expired, trying with refreshToken');
+      const refreshToken = token.refreshToken;
+      user = tokenService.verify(refreshToken, true);
+      if (!user) {
+        return res.sendStatus(StatusCodes.UNAUTHORIZED);
+      }
+      req.session.token = tokenService.create(user);
+    }
+    req.user = user;
   } else {
-    res.sendStatus(StatusCodes.UNAUTHORIZED);
+    const accessToken = req.headers.authorization;
+    if (!accessToken) {
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .send('accessToken not provided in authorization header');
+    }
+    const user = tokenService.verify(accessToken);
+    if (!user) {
+      return res.status(StatusCodes.UNAUTHORIZED).send('accessToken not valid');
+    }
+    req.user = user;
   }
-};
-
-export const authNAccessToken = (
-  req: RequestWithUser,
-  res: Response,
-  next: NextFunction
-) => {
-  const accessToken = req.headers.authorization;
-  if (!accessToken) {
-    res
-      .status(StatusCodes.UNAUTHORIZED)
-      .send('accessToken not provided in authorization header');
-    return;
-  }
-  const user = tokenService.verify(accessToken)?.['user'];
-  if (!user) {
-    res.status(StatusCodes.UNAUTHORIZED).send('accessToken not valid');
-    return;
-  }
-  req.user = user;
   next();
 };
 

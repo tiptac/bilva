@@ -12,11 +12,8 @@ router.patch('/', async (req: Request, res) => {
       .status(StatusCodes.BAD_REQUEST)
       .send('refreshToken not provided');
   }
-
-  const jwtPayload = tokenService.verify(refreshToken);
-  const isRefreshToken = !!jwtPayload?.['isRefreshToken'];
-  const user = jwtPayload?.['user'];
-  if (isRefreshToken && user) {
+  const user = tokenService.verify(refreshToken, true);
+  if (user) {
     return res.status(StatusCodes.CREATED).json(tokenService.create(user));
   }
   return res.status(StatusCodes.BAD_REQUEST).send('refreshToken not valid');

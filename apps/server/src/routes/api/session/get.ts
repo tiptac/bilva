@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { RequestWithSession } from '../../../models/common/session';
+import { RequestWithUser } from '../../../models/common/session';
 
 export const router = express.Router();
 
-router.get('/', async (req: RequestWithSession, res) => {
-  res.json(req.session.user);
+router.get('/', async (req: RequestWithUser, res) => {
+  res.json(req.user);
 });
