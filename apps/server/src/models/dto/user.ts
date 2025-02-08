@@ -1,4 +1,4 @@
-import { UserStatus } from '@prisma/client';
+import { UserRole, UserStatus } from '@prisma/client';
 import { Page } from './common/page';
 
 export interface SignupUserDto {
@@ -11,7 +11,7 @@ export interface SignupUserDto {
 export interface UserDto extends Omit<SignupUserDto, 'password'> {
   id: number;
   status: UserStatus;
-  isAdmin: boolean;
+  role: UserRole;
 }
 
 export interface UpdateUserDto {
@@ -20,6 +20,7 @@ export interface UpdateUserDto {
   email?: string;
   password?: string;
   status?: UserStatus;
+  role?: UserRole;
 }
 
 export type UserPage = Page<UserDto>;

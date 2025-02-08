@@ -1,4 +1,4 @@
-import { User, UserStatus } from '@prisma/client';
+import { User, UserRole, UserStatus } from '@prisma/client';
 
 export type CreateUserDao = {
   password: string;
@@ -21,5 +21,5 @@ export interface UserDao {
   phone: string;
   email: string;
   status: UserStatus;
-  isAdmin: boolean;
+  role: UserRole;
 }

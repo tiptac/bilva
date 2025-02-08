@@ -6,3 +6,4 @@ export interface Session {
 }
 
 export type RequestWithSession = Request & { session: Session };
+export type RequestWithUser = Request & { user: UserDto };
