@@ -84,7 +84,7 @@ router.get('/', authN, (req: RequestWithUser, res) => {
   res.json(req.user);
 });
 
-router.get('/:id', authN, async (req: RequestWithUser, res) => {
+router.get('/:id', authN, async (req, res) => {
   try {
     const user = await userDtoService.getUser(Number.parseInt(req.params.id));
     if (user) {
