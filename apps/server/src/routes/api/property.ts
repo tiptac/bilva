@@ -1,11 +1,12 @@
 import express from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { RequestWithUser } from '../../../models/common/session';
-import { propertyDtoService } from '../../../services/dto/property';
+import { RequestWithUser } from '../../models/common/session';
+import { propertyDtoService } from '../../services/dto/property';
+import { authN } from '../../handlers/auth';
 
 export const router = express.Router();
 
-router.post('/', async (req: RequestWithUser, res) => {
+router.post('/', authN, async (req: RequestWithUser, res) => {
   try {
     const summary = req.body?.summary;
     const description = req.body?.description;

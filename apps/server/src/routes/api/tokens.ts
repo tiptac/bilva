@@ -1,12 +1,12 @@
-import express, { Request } from 'express';
+import express from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { ApiError } from '../../../models/dto/common/error';
-import { tokenService } from '../../../services/common/token';
-import { userDtoService } from '../../../services/dto/user';
+import { userDtoService } from '../../services/dto/user';
+import { tokenService } from '../../services/common/token';
+import { ApiError } from '../../models/dto/common/error';
 
 export const router = express.Router();
 
-router.post('/', async (req: Request, res) => {
+router.post('/', async (req, res) => {
   try {
     const username = req.body?.username;
     const password = req.body?.password;
@@ -29,4 +29,19 @@ router.post('/', async (req: Request, res) => {
       res.sendStatus(StatusCodes.INTERNAL_SERVER_ERROR);
     }
   }
+});
+
+router.patch('/', async (req, res) => {
+  const refreshToken = req.body.refreshToken;
+
+  if (!refreshToken) {
+    return res
+      .status(StatusCodes.BAD_REQUEST)
+      .send('refreshToken not provided');
+  }
+  const user = tokenService.verify(refreshToken, true);
+  if (user) {
+    return res.status(StatusCodes.CREATED).json(tokenService.create(user));
+  }
+  return res.status(StatusCodes.BAD_REQUEST).send('refreshToken not valid');
 });

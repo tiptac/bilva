@@ -1,9 +1,14 @@
 import express from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { RequestWithSession } from '../../../models/common/session';
-import { ApiError } from '../../../models/dto/common/error';
-import { tokenService } from '../../../services/common/token';
-import { userDtoService } from '../../../services/dto/user';
+import { logout } from '../../handlers/logout';
+import {
+  RequestWithSession,
+  RequestWithUser,
+} from '../../models/common/session';
+import { ApiError } from '../../models/dto/common/error';
+import { tokenService } from '../../services/common/token';
+import { userDtoService } from '../../services/dto/user';
+import { authN } from '../../handlers/auth';
 
 export const router = express.Router();
 
@@ -12,13 +17,12 @@ router.post('/', async (req: RequestWithSession, res) => {
     const username = req.body?.username;
     const password = req.body?.password;
     if (!username || !password) {
-      res.sendStatus(StatusCodes.BAD_REQUEST);
-      return;
+      return res.sendStatus(StatusCodes.BAD_REQUEST);
     }
     const user = await userDtoService.login(username, password);
     const token = tokenService.create(user);
     req.session.token = token;
-    res.status(StatusCodes.CREATED).json(token);
+    res.status(StatusCodes.CREATED).json(user);
   } catch (error) {
     console.error('Failed to Authenticate', error);
     if ((error as ApiError).name === 'ApiError') {
@@ -28,3 +32,9 @@ router.post('/', async (req: RequestWithSession, res) => {
     }
   }
 });
+
+router.get('/', authN, (req: RequestWithUser, res) => {
+  res.json(req.user);
+});
+
+router.delete('/', authN, logout);

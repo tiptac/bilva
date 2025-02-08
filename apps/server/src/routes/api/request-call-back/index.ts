@@ -11,7 +11,7 @@ const googleFormsMiddleware = httpProxyMiddleware.createProxyMiddleware({
 
 router.post('/', googleFormsMiddleware);
 
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
   res.json({
     fullName: process.env.contact_us_form_field_fullName,
     phone: process.env.contact_us_form_field_phone,
