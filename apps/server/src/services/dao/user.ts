@@ -1,5 +1,10 @@
 import sha1 from 'sha1';
-import { CreateUserDao, UpdateUserDao, UserDao } from '../../models/dao/user';
+import {
+  CreateUserDao,
+  OtherUserDao,
+  UpdateUserDao,
+  UserDao,
+} from '../../models/dao/user';
 import { client } from './common/client';
 
 export class UserDaoService {
@@ -22,6 +27,20 @@ export class UserDaoService {
     return await client.user.findFirst({
       omit: {
         passHash: true,
+      },
+      where: {
+        id,
+      },
+    });
+  }
+
+  public async getOtherUser(id: number): Promise<OtherUserDao> {
+    return await client.user.findFirst({
+      omit: {
+        passHash: true,
+        email: true,
+        phone: true,
+        role: true,
       },
       where: {
         id,

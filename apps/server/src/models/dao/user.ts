@@ -23,3 +23,5 @@ export interface UserDao {
   status: UserStatus;
   role: UserRole;
 }
+
+export type OtherUserDao = Omit<UserDao, 'phone' | 'email' | 'role'>;

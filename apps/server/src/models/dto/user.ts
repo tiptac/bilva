@@ -14,6 +14,8 @@ export interface UserDto extends Omit<SignupUserDto, 'password'> {
   role: UserRole;
 }
 
+export type OtherUserDto = Omit<UserDto, 'email' | 'phone' | 'role'>;
+
 export interface UpdateUserDto {
   fullName?: string;
   phone?: string;

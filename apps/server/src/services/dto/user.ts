@@ -1,12 +1,26 @@
 import { CreateUserDao, UpdateUserDao } from '../../models/dao/user';
 import { ApiError, ApiErrorCode } from '../../models/dto/common/error';
-import { SignupUserDto, UpdateUserDto, UserDto } from '../../models/dto/user';
+import {
+  OtherUserDto,
+  SignupUserDto,
+  UpdateUserDto,
+  UserDto,
+} from '../../models/dto/user';
 import { userDaoService } from '../dao/user';
 
 export class UserDtoService {
   async getUser(id: number): Promise<UserDto> {
     try {
       return await userDaoService.getUser(id);
+    } catch (error) {
+      console.error('Failed to get User', error);
+      throw error;
+    }
+  }
+
+  async getOtherUser(id: number): Promise<OtherUserDto> {
+    try {
+      return await userDaoService.getOtherUser(id);
     } catch (error) {
       console.error('Failed to get User', error);
       throw error;
