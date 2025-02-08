@@ -44,6 +44,7 @@ export class BilvaLandingComponent implements OnInit {
             return visible;
           },
           clicked: () => {
+            this.router.navigate(appRoutes.bilva.user.profile);
             this.closeMenu();
           },
         },
@@ -56,9 +57,8 @@ export class BilvaLandingComponent implements OnInit {
           },
           clicked: () => {
             this.sessionService.delete().subscribe(() => {
-              window.location.href = '/';
               this.closeMenu();
-              this.router.navigate(appRoutes.bilva.home);
+              window.location.href = '/';
             });
           },
         },

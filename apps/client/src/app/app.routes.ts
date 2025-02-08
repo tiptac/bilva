@@ -11,6 +11,7 @@ export const appRoutes = {
     user: {
       login: ['/', 'user', 'login'],
       signup: ['/', 'user', 'signup'],
+      profile: ['/', 'user', 'profile'],
     },
   },
   ownIt: {

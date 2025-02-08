@@ -76,6 +76,13 @@ export const routes: Route[] = [
                 (m) => m.SignupComponent
               ),
           },
+          {
+            path: 'profile',
+            loadComponent: () =>
+              import('./user/profile/profile.component').then(
+                (m) => m.ProfileComponent
+              ),
+          },
         ],
       },
     ],

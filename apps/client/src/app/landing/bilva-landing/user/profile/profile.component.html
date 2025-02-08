@@ -1,0 +1,69 @@
+<form [formGroup]="profileForm">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-input
+        formControlName="fullName"
+        placeholder="Full Name"
+        errorText="Required valid name with minimum 2 characters"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="tel"
+        formControlName="phone"
+        placeholder="Phone Number"
+        errorText="Required Valid 10 digit Phone Number"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="email"
+        formControlName="email"
+        placeholder="yourname@domain.com"
+        errorText="Required Valid Email"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        errorText="Required"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="password"
+        formControlName="confirmPassword"
+        placeholder="Confirm Password"
+        errorText="Required"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button
+        color="dark"
+        [disabled]="profileForm.invalid"
+        (click)="save()"
+      >
+        SAVE
+      </ion-button>
+    </ion-item>
+    <ion-item *ngIf="profileForm.errors?.['passwordMismatch']">
+      <ion-text color="danger"> Password Mismatch !! </ion-text>
+    </ion-item>
+    <ion-item *ngIf="success || error">
+      <ion-text *ngIf="success" color="success"> Save Successful! </ion-text>
+      <ion-text *ngIf="error" color="danger"> Save Failed! </ion-text>
+    </ion-item>
+  </ion-list>
+</form>
