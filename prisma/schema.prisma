@@ -19,6 +19,12 @@ enum UserStatus {
   DELETED
 }
 
+enum UserRole {
+  DEFAULT
+  ADMIN
+  OPERATOR
+}
+
 enum UserContactVerificationStatus {
   PENDING
   VERIFIED
@@ -36,8 +42,9 @@ model User {
   ContactRequest              ContactRequest[]
   UserPhoneVerificationStatus UserPhoneVerificationStatus[]
   UserEmailVerificationStatus UserEmailVerificationStatus[]
-  isAdmin                     Boolean                       @default(false)
+  role                        UserRole                       @default(DEFAULT)
 }
+
 
 model UserPhoneVerificationStatus {
   id     Int                           @id @default(autoincrement())
