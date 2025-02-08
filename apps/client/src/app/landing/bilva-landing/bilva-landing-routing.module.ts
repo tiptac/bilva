@@ -59,6 +59,25 @@ export const routes: Route[] = [
             (m) => m.ComingSoonComponent
           ),
       },
+      {
+        path: 'user',
+        children: [
+          {
+            path: 'login',
+            loadComponent: () =>
+              import('./user/login/login.component').then(
+                (m) => m.LoginComponent
+              ),
+          },
+          {
+            path: 'signup',
+            loadComponent: () =>
+              import('./user/signup/signup.component').then(
+                (m) => m.SignupComponent
+              ),
+          },
+        ],
+      },
     ],
   },
 ];
