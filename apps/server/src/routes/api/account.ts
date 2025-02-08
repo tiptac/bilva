@@ -86,7 +86,9 @@ router.get('/', authN, (req: RequestWithUser, res) => {
 
 router.get('/:id', authN, async (req, res) => {
   try {
-    const user = await userDtoService.getUser(Number.parseInt(req.params.id));
+    const user = await userDtoService.getOtherUser(
+      Number.parseInt(req.params.id)
+    );
     if (user) {
       return res.json(user);
     }
