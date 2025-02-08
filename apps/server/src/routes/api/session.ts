@@ -1,14 +1,11 @@
 import express from 'express';
 import { StatusCodes } from 'http-status-codes';
+import { authN } from '../../handlers/auth';
 import { logout } from '../../handlers/logout';
-import {
-  RequestWithSession,
-  RequestWithUser,
-} from '../../models/common/session';
+import { RequestWithSession } from '../../models/common/session';
 import { ApiError } from '../../models/dto/common/error';
 import { tokenService } from '../../services/common/token';
 import { userDtoService } from '../../services/dto/user';
-import { authN } from '../../handlers/auth';
 
 export const router = express.Router();
 
@@ -31,10 +28,6 @@ router.post('/', async (req: RequestWithSession, res) => {
       res.sendStatus(StatusCodes.INTERNAL_SERVER_ERROR);
     }
   }
-});
-
-router.get('/', authN, (req: RequestWithUser, res) => {
-  res.json(req.user);
 });
 
 router.delete('/', authN, logout);

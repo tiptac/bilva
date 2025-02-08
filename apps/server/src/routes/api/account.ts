@@ -1,10 +1,10 @@
 import express from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { RequestWithUser } from '../../models/common/session';
-import { userDtoService } from '../../services/dto/user';
-import { ApiError } from '../../models/dto/common/error';
-import { logout } from '../../handlers/logout';
 import { authN } from '../../handlers/auth';
+import { logout } from '../../handlers/logout';
+import { RequestWithUser } from '../../models/common/session';
+import { ApiError } from '../../models/dto/common/error';
+import { userDtoService } from '../../services/dto/user';
 
 export const router = express.Router();
 
@@ -74,8 +74,25 @@ router.delete(
       next();
     } catch (error) {
       console.error('Failed to delete user', error);
-      res.status(StatusCodes.INTERNAL_SERVER_ERROR);
+      res.sendStatus(StatusCodes.INTERNAL_SERVER_ERROR);
     }
   },
   logout
 );
+
+router.get('/', authN, (req: RequestWithUser, res) => {
+  res.json(req.user);
+});
+
+router.get('/:id', authN, async (req: RequestWithUser, res) => {
+  try {
+    const user = await userDtoService.getUser(Number.parseInt(req.params.id));
+    if (user) {
+      return res.json(user);
+    }
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('User not found');
+  } catch (error) {
+    console.error('Failed to get user', error);
+    res.sendStatus(StatusCodes.INTERNAL_SERVER_ERROR);
+  }
+});
