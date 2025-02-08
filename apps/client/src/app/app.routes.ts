@@ -8,5 +8,9 @@ export const appRoutes = {
       ownIt: ['/', 'business', 'realtysolution', 'ownit'],
       theBigDay: ['/', 'business', 'eventmanagement', 'thebigday'],
     },
+    user: {
+      login: ['/', 'user', 'login'],
+      signup: ['/', 'user', 'signup'],
+    },
   },
 };

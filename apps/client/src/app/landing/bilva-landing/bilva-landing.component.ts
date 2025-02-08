@@ -22,6 +22,13 @@ export class BilvaLandingComponent {
     },
     { title: 'CAREER', url: appRoutes.bilva.career },
     { title: 'CONTACT', url: appRoutes.bilva.contact },
+    {
+      title: 'USER',
+      child: [
+        { title: 'Login', url: appRoutes.bilva.user.login },
+        { title: 'Sign Up', url: appRoutes.bilva.user.signup },
+      ],
+    },
   ];
 
   currentYear = new Date().getFullYear();
