@@ -56,6 +56,7 @@ export class BilvaLandingComponent implements OnInit {
           },
           clicked: () => {
             this.sessionService.delete().subscribe(() => {
+              window.location.href = '/';
               this.closeMenu();
               this.router.navigate(appRoutes.bilva.home);
             });

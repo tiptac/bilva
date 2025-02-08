@@ -52,7 +52,7 @@ export class LoginComponent {
     this.sessionService.create(this.loginForm.value).subscribe({
       next: () => {
         this.success = true;
-        this.inProgress = false;
+        this.error = this.inProgress = false;
         setTimeout(() => {
           this.router.navigate(appRoutes.bilva.home);
         }, 1000);
@@ -60,7 +60,7 @@ export class LoginComponent {
       error: (err) => {
         console.error(err);
         this.error = true;
-        this.inProgress = false;
+        this.success = this.inProgress = false;
       },
     });
   }

@@ -56,7 +56,7 @@ export class SignupComponent {
     this.http.post('api/account', this.signupForm.value).subscribe({
       next: () => {
         this.success = true;
-        this.inProgress = false;
+        this.error = this.inProgress = false;
         setTimeout(() => {
           this.router.navigate(appRoutes.bilva.user.login);
         }, 1000);
@@ -64,7 +64,7 @@ export class SignupComponent {
       error: (err) => {
         console.error(err);
         this.error = true;
-        this.inProgress = false;
+        this.inProgress = this.success = false;
       },
     });
   }

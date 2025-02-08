@@ -73,13 +73,13 @@ export class ContactComponent {
       .subscribe({
         next: () => {
           this.success = true;
-          this.inProgress = false;
+          this.error = this.inProgress = false;
           this.contactUsform.disable();
         },
         error: (err) => {
           console.error(err);
           this.error = true;
-          this.inProgress = false;
+          this.success = this.inProgress = false;
         },
       });
   }
