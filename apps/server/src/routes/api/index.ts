@@ -6,6 +6,7 @@ import { authN, adminAuthZ } from '../../handlers/auth';
 // import { router as session } from './session';
 // import { router as swagger } from './swagger';
 // import { router as property } from './property';
+import { router as about } from './about';
 import { router as callBack } from './request-call-back';
 
 export const router = express.Router();
@@ -16,6 +17,7 @@ export const router = express.Router();
 // router.use('/session', session);
 // router.use('/property', property);
 router.use('/request-call-back', callBack);
+router.use('/about', about);
 
 router.use('/', authN);
 // AuthN API
