@@ -3,6 +3,7 @@ import { MenuController, RefresherCustomEvent } from '@ionic/angular';
 import { ScreenSizeService } from '../../../common/services/screen-size-service';
 import { appRoutes } from '../../app.routes';
 import { SessionService } from '../../services/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bilva-bilva-landing',
@@ -56,6 +57,7 @@ export class BilvaLandingComponent implements OnInit {
           clicked: () => {
             this.sessionService.delete().subscribe(() => {
               this.closeMenu();
+              this.router.navigate(appRoutes.bilva.home);
             });
           },
         },
@@ -83,7 +85,8 @@ export class BilvaLandingComponent implements OnInit {
   constructor(
     private menuCtrl: MenuController,
     private screenSizeService: ScreenSizeService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private router: Router
   ) {}
 
   @HostListener('window:resize', ['$event'])

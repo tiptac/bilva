@@ -36,4 +36,12 @@ export class SessionService {
       })
     );
   }
+
+  create(credentials: { username: string; password: string }) {
+    return this.http.post('api/session', credentials).pipe(
+      tap((user) => {
+        this.user.set(user);
+      })
+    );
+  }
 }

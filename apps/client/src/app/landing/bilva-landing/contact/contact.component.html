@@ -15,6 +15,7 @@
                 <ion-list [inset]="true">
                   <ion-item>
                     <ion-input
+                      name="fullName"
                       formControlName="fullName"
                       placeholder="Full Name"
                       errorText="Required valid name with minimum 2 characters"
@@ -25,6 +26,7 @@
                   <ion-item>
                     <ion-input
                       type="tel"
+                      name="phone"
                       formControlName="phone"
                       placeholder="Phone Number"
                       errorText="Required Valid 10 digit Phone Number"
@@ -35,6 +37,7 @@
                   <ion-item>
                     <ion-input
                       type="email"
+                      name="email"
                       formControlName="email"
                       placeholder="yourname@domain.com"
                       errorText="Required Valid Email"
@@ -45,6 +48,7 @@
                     <ion-textarea
                       class="contact-us-message"
                       formControlName="message"
+                      name="message"
                       placeholder="Your Message ..."
                       errorText="Required"
                     >
