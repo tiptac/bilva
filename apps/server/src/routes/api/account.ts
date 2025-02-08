@@ -90,7 +90,7 @@ router.get('/:id', authN, async (req, res) => {
     if (user) {
       return res.json(user);
     }
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('User not found');
+    return res.status(StatusCodes.BAD_REQUEST).send('User not found');
   } catch (error) {
     console.error('Failed to get user', error);
     res.sendStatus(StatusCodes.INTERNAL_SERVER_ERROR);
