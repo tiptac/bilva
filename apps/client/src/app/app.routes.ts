@@ -13,4 +13,10 @@ export const appRoutes = {
       signup: ['/', 'user', 'signup'],
     },
   },
+  ownIt: {
+    home: ['/', 'ownit'],
+  },
+  theBigDay: {
+    home: ['/', 'thebigday'],
+  },
 };
