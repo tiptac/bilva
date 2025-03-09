@@ -1,0 +1,16 @@
+*****Docker login
+sudo docker login
+
+*****Create Netwrok
+sudo docker network create bilva
+
+pull
+Docker pull pavishreyspkps/bilva:v16
+Docker pull pavishreyspkps/bilva_server
+
+Running
+sudo docker run -itd --name bilva_server --network bilva pavishreyspkps/bilva_server
+sudo docker run -itd -p 443:443 -p 80:80 --name bilva --network bilva pavishreyspkps/bilva:v16
+
+
+

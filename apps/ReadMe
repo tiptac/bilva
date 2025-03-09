@@ -1,0 +1,22 @@
+git add .
+git status
+git commit -m "final changes of content, style and size"
+git push
+
+
+pnpm build
+pnpm run predeploy
+pnpm run deploy
+
+
+docker build -f Dockerfile.server . -t server
+docker build -f Dockerfile.client . -t client
+
+docker tag client:latest pavishreyspkps/bilva:v18
+docker push pavishreyspkps/bilva:v18
+
+pnpm nx serve server
+pnpm nx serve client
+
+docker run -itd --name bilva_server --network bilva pavishreyspkps/bilva_server
+docker run -itd -p 443:443 -p 80:80 --name bilva --network bilva pavishreyspkps/bilva:v16
