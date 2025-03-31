@@ -18,8 +18,14 @@ export class BilvaLandingComponent {
     {
       title: 'BUSINESS',
       child: [
-        { title: 'Realty Solutions', url: appRoutes.bilva.business.ownIt },
-        { title: 'Event Management', url: appRoutes.bilva.business.theBigDay },
+        {
+          title: 'Realty Solutions',
+          url: appRoutes.bilva.business.realtySolution.ownIt,
+        },
+        {
+          title: 'Event Management',
+          url: appRoutes.bilva.business.eventManagement.theBigDay,
+        },
       ],
     },
     { title: 'CAREER', url: appRoutes.bilva.career },
