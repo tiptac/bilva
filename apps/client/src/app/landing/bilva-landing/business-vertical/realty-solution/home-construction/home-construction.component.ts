@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, MenuController } from '@ionic/angular';
 import { appRoutes } from '../../../../../app.routes';
 
 @Component({
@@ -12,4 +12,29 @@ import { appRoutes } from '../../../../../app.routes';
 })
 export class HomeConstructionComponent {
   appRoutes = appRoutes;
+
+  menuItems = [
+    {
+      label: 'Our Projects',
+      url: appRoutes.bilva.business.realtySolution.homeConstruction.ourProjects,
+    },
+    {
+      label: 'Contract Comparision',
+      url: appRoutes.bilva.business.realtySolution.homeConstruction
+        .contractComparision,
+    },
+    {
+      label: 'Testimonials',
+      url: appRoutes.bilva.business.realtySolution.homeConstruction
+        .testimonials,
+    },
+  ];
+  selectedMenu = this.menuItems[0].label;
+
+  constructor(private menuCtrl: MenuController) {}
+
+  closeMenu(item: { label: string }) {
+    this.selectedMenu = item.label;
+    this.menuCtrl.close('home-construction');
+  }
 }

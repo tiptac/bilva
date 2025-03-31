@@ -1,44 +1,32 @@
 <ion-split-pane when="lg" contentId="home-construction">
-  <ion-menu contentId="home-construction">
+  <ion-menu contentId="home-construction" menuId="home-construction">
     <ion-content class="ion-padding">
       <ion-list>
         <ion-item
+          *ngFor="let item of menuItems"
           [button]="true"
           [detail]="true"
           [routerLinkActive]="'active'"
-          [routerLink]="
-            appRoutes.bilva.business.realtySolution.homeConstruction.ourProjects
-          "
+          [routerLink]="item.url"
+          (click)="closeMenu(item)"
         >
-          Our Projects
-        </ion-item>
-        <ion-item
-          [button]="true"
-          [detail]="true"
-          [routerLinkActive]="'active'"
-          [routerLink]="
-            appRoutes.bilva.business.realtySolution.homeConstruction
-              .contractComparision
-          "
-        >
-          Contract Comparison
-        </ion-item>
-        <ion-item
-          [button]="true"
-          [detail]="true"
-          [routerLinkActive]="'active'"
-          [routerLink]="
-            appRoutes.bilva.business.realtySolution.homeConstruction
-              .testimonials
-          "
-        >
-          Testimonials
+          {{ item.label }}
         </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
-
   <div class="ion-page" id="home-construction">
+    <ion-header class="ion-hide-lg-up">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button
+            menu="home-construction"
+            auto-hide="true"
+          ></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ selectedMenu }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
     <ion-content class="ion-padding">
       <ion-router-outlet></ion-router-outlet>
     </ion-content>
