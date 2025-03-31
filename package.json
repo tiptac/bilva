@@ -17,8 +17,8 @@
   },
   "private": true,
   "engines": {
-    "node": ">=20.12.2",
-    "pnpm": ">=8.10.5"
+   "node": ">=22.14.0",
+   "pnpm": ">=9.15 <10"
   },
   "dependencies": {
     "@angular/animations": "~18.2.0",
