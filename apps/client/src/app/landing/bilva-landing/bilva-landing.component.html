@@ -51,11 +51,12 @@
           mode="md"
           class="ion-hide-lg-up"
           auto-hide="false"
+          menu="main-content"
         ></ion-menu-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-menu side="end" contentId="main-content">
+  <ion-menu side="end" contentId="main-content" menuId="main-content">
     <ion-header mode="md">
       <ion-toolbar>
         <ion-title></ion-title>
@@ -164,7 +165,8 @@
             class="ion-text-center copyright"
           >
             <ion-text>
-              Copyright© {{ currentYear }} Bilva Innovations LLP. All Rights Reserved
+              Copyright© {{ currentYear }} Bilva Innovations LLP. All Rights
+              Reserved
             </ion-text>
           </ion-col>
         </ion-row>
