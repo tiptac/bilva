@@ -2,6 +2,9 @@
   <ion-menu contentId="home-construction" menuId="home-construction">
     <ion-header>
       <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button menu="home-construction"></ion-menu-button>
+        </ion-buttons>
         <ion-title>Home Construction</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -19,6 +22,15 @@
             {{ item.label }}
           </ion-item>
         </ion-item-group>
+        <ion-item-group>
+          <ion-item-divider> </ion-item-divider>
+          <ion-item
+            [button]="true"
+            [routerLink]="appRoutes.bilva.business.realtySolution.ownIt"
+          >
+            <ion-icon name="chevron-back-outline"></ion-icon> Go Back
+          </ion-item>
+        </ion-item-group>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -26,10 +38,7 @@
     <ion-header class="ion-hide-lg-up">
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-menu-button
-            menu="home-construction"
-            auto-hide="true"
-          ></ion-menu-button>
+          <ion-menu-button menu="home-construction"></ion-menu-button>
         </ion-buttons>
         <!-- <ion-title>{{ selectedMenu }}</ion-title> -->
         <ion-title> Home Construction </ion-title>
