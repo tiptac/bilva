@@ -1,6 +1,9 @@
 <ion-text color="dark" mode="md">
   <!-- <h2 class="ion-text-center" style="font-family: 'Bradley Hand', cursive"> -->
-    <h2 class="ion-text-center" style="font-family: 'Times New Roman', Times, serif;">
+  <h2
+    class="ion-text-center"
+    style="font-family: 'Times New Roman', Times, serif"
+  >
     <b> OWN iT : Real estate made simple, swift and stress-free ! </b>
   </h2>
 </ion-text>
@@ -8,7 +11,11 @@
 <ion-grid>
   <ion-row>
     <ion-col size="12" size-lg="2.4">
-      <ion-card class="m-0" mode="md">
+      <ion-card
+        class="m-0"
+        mode="md"
+        [routerLink]="appRoutes.bilva.business.realtySolution.buySell"
+      >
         <img alt="BUY SELL RENT" src="assets/images/BS.WEBP" loading="lazy" />
         <ion-card-header class="ion-text-center">
           <ion-card-title>Buying and Selling</ion-card-title>
@@ -21,7 +28,11 @@
     </ion-col>
 
     <ion-col size="12" size-lg="2.4">
-      <ion-card class="m-0" mode="md">
+      <ion-card
+        class="m-0"
+        mode="md"
+        [routerLink]="appRoutes.bilva.business.realtySolution.homeConstruction"
+      >
         <img alt="BUILD" src="assets/images/HS.WEBP" loading="lazy" />
         <ion-card-header class="ion-text-center">
           <ion-card-title>Home Construction</ion-card-title>
@@ -35,7 +46,11 @@
     </ion-col>
 
     <ion-col size="12" size-lg="2.4">
-      <ion-card class="m-0" mode="md">
+      <ion-card
+        class="m-0"
+        mode="md"
+        [routerLink]="appRoutes.bilva.business.realtySolution.homeInteriors"
+      >
         <img alt="HOME INTERIORS" src="assets/images/HI.webp" loading="lazy" />
         <ion-card-header class="ion-text-center">
           <ion-card-title>Home Interiors</ion-card-title>
@@ -48,10 +63,14 @@
     </ion-col>
 
     <ion-col size="12" size-lg="2.4">
-      <ion-card class="m-0" mode="md">
+      <ion-card
+        class="m-0"
+        mode="md"
+        [routerLink]="appRoutes.bilva.business.realtySolution.assetManagement"
+      >
         <img alt="MANAGE" src="assets/images/AM.webp" loading="lazy" />
         <ion-card-header class="ion-text-center">
-          <ion-card-title>Asset Management</ion-card-title>
+          <ion-card-title> Asset Management </ion-card-title>
         </ion-card-header>
         <ion-card-content class="ion-text-justify">
           Enhance homeowner's investments by keeping properties in optimal
@@ -61,7 +80,11 @@
     </ion-col>
 
     <ion-col size="12" size-lg="2.4">
-      <ion-card class="m-0" mode="md">
+      <ion-card
+        class="m-0"
+        mode="md"
+        [routerLink]="appRoutes.bilva.business.realtySolution.relocation"
+      >
         <img
           alt="RELOCATION SUPPORT"
           src="assets/images/RS.WEBP"

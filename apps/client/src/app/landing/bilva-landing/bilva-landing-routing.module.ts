@@ -26,6 +26,41 @@ export const routes: Route[] = [
                     './business-vertical/realty-solution/own-it/own-it.component'
                   ).then((m) => m.OwnItComponent),
               },
+              {
+                path: 'buy-sell',
+                loadComponent: () =>
+                  import('../../common/coming-soon/coming-soon.component').then(
+                    (m) => m.ComingSoonComponent
+                  ),
+              },
+              {
+                path: 'home-construction',
+                loadComponent: () =>
+                  import(
+                    './business-vertical/realty-solution/home-construction/home-construction.component'
+                  ).then((m) => m.HomeConstructionComponent),
+              },
+              {
+                path: 'home-interiors',
+                loadComponent: () =>
+                  import('../../common/coming-soon/coming-soon.component').then(
+                    (m) => m.ComingSoonComponent
+                  ),
+              },
+              {
+                path: 'asset-management',
+                loadComponent: () =>
+                  import('../../common/coming-soon/coming-soon.component').then(
+                    (m) => m.ComingSoonComponent
+                  ),
+              },
+              {
+                path: 'relocation',
+                loadComponent: () =>
+                  import('../../common/coming-soon/coming-soon.component').then(
+                    (m) => m.ComingSoonComponent
+                  ),
+              },
             ],
           },
           {

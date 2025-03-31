@@ -14,3 +14,10 @@ img {
 ion-card {
   height: 100%;
 }
+ion-card:hover {
+  border: 0.1em solid;
+}
+
+ion-card-title {
+  cursor: pointer;
+}
