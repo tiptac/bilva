@@ -22,9 +22,9 @@ export const routes: Route[] = [
               {
                 path: 'ownit',
                 loadComponent: () =>
-                  import('./business-vertical/own-it/own-it.component').then(
-                    (m) => m.OwnItComponent
-                  ),
+                  import(
+                    './business-vertical/realty-solution/own-it/own-it.component'
+                  ).then((m) => m.OwnItComponent),
               },
             ],
           },
@@ -35,7 +35,7 @@ export const routes: Route[] = [
                 path: 'thebigday',
                 loadComponent: () =>
                   import(
-                    './business-vertical/the-big-day/the-big-day.component'
+                    './business-vertical/event-management/the-big-day/the-big-day.component'
                   ).then((m) => m.TheBigDayComponent),
               },
             ],
