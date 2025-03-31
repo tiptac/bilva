@@ -7,6 +7,8 @@ import { ScreenSizeService } from '../common/services/screen-size-service';
   selector: 'bilva',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class AppComponent {
   public appPages = [

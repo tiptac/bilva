@@ -7,6 +7,8 @@ import { appRoutes } from '../../app.routes';
   selector: 'bilva-bilva-landing',
   templateUrl: './bilva-landing.component.html',
   styleUrl: './bilva-landing.component.scss',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
 })
 export class BilvaLandingComponent {
   appRoutes = appRoutes;
