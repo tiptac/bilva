@@ -1,17 +1,24 @@
 <ion-split-pane when="lg" contentId="home-construction">
   <ion-menu contentId="home-construction" menuId="home-construction">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Home Construction</ion-title>
+      </ion-toolbar>
+    </ion-header>
     <ion-content class="ion-padding">
       <ion-list>
-        <ion-item
-          *ngFor="let item of menuItems"
-          [button]="true"
-          [detail]="true"
-          [routerLinkActive]="'active'"
-          [routerLink]="item.url"
-          (click)="closeMenu(item)"
-        >
-          {{ item.label }}
-        </ion-item>
+        <ion-item-group>
+          <ion-item
+            *ngFor="let item of menuItems"
+            [button]="true"
+            [detail]="true"
+            [routerLinkActive]="'active'"
+            [routerLink]="item.url"
+            (click)="closeMenu(item)"
+          >
+            {{ item.label }}
+          </ion-item>
+        </ion-item-group>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -24,7 +31,8 @@
             auto-hide="true"
           ></ion-menu-button>
         </ion-buttons>
-        <ion-title>{{ selectedMenu }}</ion-title>
+        <!-- <ion-title>{{ selectedMenu }}</ion-title> -->
+        <ion-title> Home Construction </ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
