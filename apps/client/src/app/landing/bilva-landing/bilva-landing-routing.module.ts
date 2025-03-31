@@ -44,22 +44,22 @@ export const routes: Route[] = [
                     path: 'our-projects',
                     loadComponent: () =>
                       import(
-                        '../../common/coming-soon/coming-soon.component'
-                      ).then((m) => m.ComingSoonComponent),
+                        './business-vertical/realty-solution/home-construction/our-projects/our-projects.component'
+                      ).then((m) => m.OurProjectsComponent),
                   },
                   {
                     path: 'contract-comparision',
                     loadComponent: () =>
                       import(
-                        '../../common/coming-soon/coming-soon.component'
-                      ).then((m) => m.ComingSoonComponent),
+                        './business-vertical/realty-solution/home-construction/contract-comparision/contract-comparision.component'
+                      ).then((m) => m.ContractComparisionComponent),
                   },
                   {
                     path: 'testimonials',
                     loadComponent: () =>
                       import(
-                        '../../common/coming-soon/coming-soon.component'
-                      ).then((m) => m.ComingSoonComponent),
+                        './business-vertical/realty-solution/home-construction/testimonials/testimonials.component'
+                      ).then((m) => m.TestimonialsComponent),
                   },
                   {
                     path: '',
