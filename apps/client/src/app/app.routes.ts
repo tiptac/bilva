@@ -8,12 +8,30 @@ export const appRoutes = {
       realtySolution: {
         ownIt: ['/', 'business', 'realtysolution', 'ownit'],
         buySell: ['/', 'business', 'realtysolution', 'buy-sell'],
-        homeConstruction: [
-          '/',
-          'business',
-          'realtysolution',
-          'home-construction',
-        ],
+        homeConstruction: {
+          default: ['/', 'business', 'realtysolution', 'home-construction'],
+          ourProjects: [
+            '/',
+            'business',
+            'realtysolution',
+            'home-construction',
+            'our-projects',
+          ],
+          contractComparision: [
+            '/',
+            'business',
+            'realtysolution',
+            'home-construction',
+            'contract-comparision',
+          ],
+          testimonials: [
+            '/',
+            'business',
+            'realtysolution',
+            'home-construction',
+            'testimonials',
+          ],
+        },
         homeInteriors: ['/', 'business', 'realtysolution', 'home-interiors'],
         assetManagement: [
           '/',

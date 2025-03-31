@@ -39,6 +39,34 @@ export const routes: Route[] = [
                   import(
                     './business-vertical/realty-solution/home-construction/home-construction.component'
                   ).then((m) => m.HomeConstructionComponent),
+                children: [
+                  {
+                    path: 'our-projects',
+                    loadComponent: () =>
+                      import(
+                        '../../common/coming-soon/coming-soon.component'
+                      ).then((m) => m.ComingSoonComponent),
+                  },
+                  {
+                    path: 'contract-comparision',
+                    loadComponent: () =>
+                      import(
+                        '../../common/coming-soon/coming-soon.component'
+                      ).then((m) => m.ComingSoonComponent),
+                  },
+                  {
+                    path: 'testimonials',
+                    loadComponent: () =>
+                      import(
+                        '../../common/coming-soon/coming-soon.component'
+                      ).then((m) => m.ComingSoonComponent),
+                  },
+                  {
+                    path: '',
+                    redirectTo: 'our-projects',
+                    pathMatch: 'full',
+                  },
+                ],
               },
               {
                 path: 'home-interiors',
