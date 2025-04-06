@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController, RefresherCustomEvent } from '@ionic/angular';
-import { ScreenSizeService } from '../../../common/services/screen-size-service';
+import { ScreenSizeService } from '../../common/services/screen-size-service';
 import { appRoutes } from '../../app.routes';
 
 @Component({

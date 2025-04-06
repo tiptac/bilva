@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { MenuController, RefresherCustomEvent } from '@ionic/angular';
-import { ScreenSizeService } from '../common/services/screen-size-service';
+import { ScreenSizeService } from './common/services/screen-size-service';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
