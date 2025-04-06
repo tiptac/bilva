@@ -42,10 +42,22 @@ export const routes: Route[] = [
                 children: [
                   {
                     path: 'our-projects',
-                    loadComponent: () =>
-                      import(
-                        './business-vertical/realty-solution/home-construction/our-projects/our-projects.component'
-                      ).then((m) => m.OurProjectsComponent),
+                    children: [
+                      {
+                        path: '',
+                        loadComponent: () =>
+                          import(
+                            './business-vertical/realty-solution/home-construction/projects/projects.component'
+                          ).then((m) => m.ProjectsComponent),
+                      },
+                      {
+                        path: ':id',
+                        loadComponent: () =>
+                          import(
+                            './business-vertical/realty-solution/home-construction/projects/project-details/project-details.component'
+                          ).then((m) => m.ProjectDetailsComponent),
+                      },
+                    ],
                   },
                   {
                     path: 'contract-comparision',
