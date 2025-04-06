@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular/standalone';
-import { RouterModule } from '@angular/router';
+import { EventType, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'bilva-breadcrumb',
@@ -9,4 +10,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.scss',
 })
-export class BreadcrumbComponent {}
+export class BreadcrumbComponent {
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter((e) => e.type === EventType.NavigationEnd))
+      .subscribe((e) => {
+        console.log(e);
+      });
+  }
+}
