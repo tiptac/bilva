@@ -13,7 +13,7 @@
 
   <ion-row>
     <ion-col
-      *ngFor="let project of projects"
+      *ngFor="let project of projects$ | async"
       size="12"
       size-lg="6"
       [routerLink]="[project.id]"

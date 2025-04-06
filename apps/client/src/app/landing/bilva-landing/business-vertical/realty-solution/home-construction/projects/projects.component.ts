@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { Project, projects } from './projects.model';
+import { Project } from '../../../../../../common/api/models/projects.model';
+import { ProjectsService } from '../../../../../../common/services/projects.service';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'bilva-home-contruction-projects',
@@ -11,5 +13,11 @@ import { Project, projects } from './projects.model';
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
-  projects: Project[] = projects;
+  projects$: Observable<Array<Project>>;
+
+  constructor(private projectsService: ProjectsService) {
+    this.projects$ = this.projectsService
+      .getProjects()
+      .pipe(map((r) => r.data));
+  }
 }

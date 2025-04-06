@@ -1,4 +1,4 @@
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" *ngIf="project$ | async as project">
   <ion-card>
     <ion-card-header>
       <ion-card-title>{{ project.title }}</ion-card-title>

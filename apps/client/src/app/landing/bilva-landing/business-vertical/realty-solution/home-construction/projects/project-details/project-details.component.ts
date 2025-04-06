@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { Project, projects } from '../projects.model';
+import { Project } from '../../../../../../../common/api/models/projects.model';
+import { Observable } from 'rxjs';
+import { ProjectsService } from '../../../../../../../common/services/projects.service';
 
 @Component({
   selector: 'bilva-home-contruction-project-details',
@@ -11,9 +13,13 @@ import { Project, projects } from '../projects.model';
   styleUrl: './project-details.component.scss',
 })
 export class ProjectDetailsComponent {
-  project: Project;
-  constructor(private route: ActivatedRoute) {
+  project$: Observable<Project>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private projectsService: ProjectsService
+  ) {
     const projectId = Number.parseInt(this.route.snapshot.params['id']);
-    this.project = <Project>projects.find((p) => p.id === projectId);
+    this.project$ = this.projectsService.getProject(projectId);
   }
 }
