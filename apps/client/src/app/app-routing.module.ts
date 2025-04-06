@@ -26,23 +26,23 @@ export const routes: Route[] = [
   {
     path: 'page-not-found',
     loadComponent: () =>
-      import('./common/page-not-found/page-not-found.component').then(
-        (m) => m.PageNotFoundComponent
-      ),
+      import(
+        './common/components/page-not-found/page-not-found.component'
+      ).then((m) => m.PageNotFoundComponent),
   },
   {
     path: 'under-construction',
     loadComponent: () =>
-      import('./common/coming-soon/coming-soon.component').then(
+      import('./common/components/coming-soon/coming-soon.component').then(
         (m) => m.ComingSoonComponent
       ),
   },
   {
     path: '**',
     loadComponent: () =>
-      import('./common/page-not-found/page-not-found.component').then(
-        (m) => m.PageNotFoundComponent
-      ),
+      import(
+        './common/components/page-not-found/page-not-found.component'
+      ).then((m) => m.PageNotFoundComponent),
   },
 ];
 

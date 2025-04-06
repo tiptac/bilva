@@ -29,9 +29,9 @@ export const routes: Route[] = [
               {
                 path: 'buy-sell',
                 loadComponent: () =>
-                  import('../../common/coming-soon/coming-soon.component').then(
-                    (m) => m.ComingSoonComponent
-                  ),
+                  import(
+                    '../../common/components/coming-soon/coming-soon.component'
+                  ).then((m) => m.ComingSoonComponent),
               },
               {
                 path: 'home-construction',
@@ -83,23 +83,23 @@ export const routes: Route[] = [
               {
                 path: 'home-interiors',
                 loadComponent: () =>
-                  import('../../common/coming-soon/coming-soon.component').then(
-                    (m) => m.ComingSoonComponent
-                  ),
+                  import(
+                    '../../common/components/coming-soon/coming-soon.component'
+                  ).then((m) => m.ComingSoonComponent),
               },
               {
                 path: 'asset-management',
                 loadComponent: () =>
-                  import('../../common/coming-soon/coming-soon.component').then(
-                    (m) => m.ComingSoonComponent
-                  ),
+                  import(
+                    '../../common/components/coming-soon/coming-soon.component'
+                  ).then((m) => m.ComingSoonComponent),
               },
               {
                 path: 'relocation',
                 loadComponent: () =>
-                  import('../../common/coming-soon/coming-soon.component').then(
-                    (m) => m.ComingSoonComponent
-                  ),
+                  import(
+                    '../../common/components/coming-soon/coming-soon.component'
+                  ).then((m) => m.ComingSoonComponent),
               },
             ],
           },
@@ -130,9 +130,9 @@ export const routes: Route[] = [
       {
         path: 'career',
         loadComponent: () =>
-          import('../../common/coming-soon/coming-soon.component').then(
-            (m) => m.ComingSoonComponent
-          ),
+          import(
+            '../../common/components/coming-soon/coming-soon.component'
+          ).then((m) => m.ComingSoonComponent),
       },
     ],
   },

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { appRoutes } from '../../app.routes';
+import { appRoutes } from '../../../app.routes';
 import { RouterModule } from '@angular/router';
 
 @Component({

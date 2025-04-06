@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { ComingSoonComponent } from '../../common/coming-soon/coming-soon.component';
+import { ComingSoonComponent } from '../../common/components/coming-soon/coming-soon.component';
 
 @Component({
   selector: 'bilva-own-it-landing',

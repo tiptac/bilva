@@ -2,7 +2,7 @@ import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonButton } from '@ionic/angular/standalone';
-import { appRoutes } from '../../app.routes';
+import { appRoutes } from '../../../app.routes';
 
 @Component({
   selector: 'bilva-go-back',
