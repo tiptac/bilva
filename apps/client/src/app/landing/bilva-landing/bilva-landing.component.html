@@ -10,7 +10,13 @@
         />
       </ion-title>
       <ion-buttons slot="end">
-        @for (page of appPages;track $index) { @if (page.url) {
+        <ion-button shape="round" (click)="goBack()">
+          <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        </ion-button>
+        <ion-button shape="round" (click)="refresh()">
+          <ion-icon name="refresh-circle-outline"></ion-icon>
+        </ion-button>
+        | @for (page of appPages;track $index) { @if (page.url) {
         <ion-button
           class="ion-hide-lg-down"
           [routerLinkActive]="'active'"

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicModule, MenuController } from '@ionic/angular';
@@ -31,10 +31,14 @@ export class HomeConstructionComponent {
   ];
   selectedMenu = this.menuItems[0].label;
 
-  constructor(private menuCtrl: MenuController) {}
+  constructor(private menuCtrl: MenuController, private location: Location) {}
 
   closeMenu(item: { label: string }) {
     this.selectedMenu = item.label;
     this.menuCtrl.close('home-construction');
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

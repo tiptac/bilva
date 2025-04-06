@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController, RefresherCustomEvent } from '@ionic/angular';
 import { ScreenSizeService } from '../../../common/services/screen-size-service';
 import { appRoutes } from '../../app.routes';
@@ -35,7 +37,9 @@ export class BilvaLandingComponent {
   currentYear = new Date().getFullYear();
   constructor(
     private menuCtrl: MenuController,
-    private screenSizeService: ScreenSizeService
+    private screenSizeService: ScreenSizeService,
+    private location: Location,
+    private router: Router
   ) {}
 
   @HostListener('window:resize', ['$event'])
@@ -50,5 +54,17 @@ export class BilvaLandingComponent {
 
   closeMenu() {
     this.menuCtrl.close();
+  }
+
+  goBack() {
+    if (history.state.navigationId > 1) {
+      this.location.back();
+    } else {
+      this.router.navigate(appRoutes.bilva.home);
+    }
+  }
+
+  refresh() {
+    window.location.reload();
   }
 }
