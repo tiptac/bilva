@@ -16,7 +16,14 @@
         "bundle": false,
         "main": "apps/server/src/main.ts",
         "tsConfig": "apps/server/tsconfig.app.json",
-        "assets": ["apps/server/src/assets", ".env"],
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/server/src/assets",
+            "output": "apps/server/src/assets"
+          },
+          ".env"
+        ],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
@@ -43,7 +50,17 @@
       "dependsOn": ["build"],
       "options": {
         "buildTarget": "server:build",
-        "runBuildTargetDependencies": false
+        "runBuildTargetDependencies": false,
+        "buildTargetOptions": {
+          "assets": [
+            {
+              "glob": "**/*",
+              "input": "apps/server/src/assets",
+              "output": "apps/server/src/assets"
+            },
+            ".env"
+          ]
+        }
       },
       "configurations": {
         "development": {
