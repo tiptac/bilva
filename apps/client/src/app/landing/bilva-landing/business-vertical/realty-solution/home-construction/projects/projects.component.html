@@ -11,9 +11,9 @@
     <ion-card-content> </ion-card-content>
   </ion-card>
 
-  <ion-row>
+  <ion-row *ngIf="projects$ | async as projects">
     <ion-col
-      *ngFor="let project of projects$ | async"
+      *ngFor="let project of projects"
       size="12"
       size-lg="6"
       [routerLink]="[project.id]"
