@@ -56,14 +56,6 @@ export class BilvaLandingComponent {
     this.menuCtrl.close();
   }
 
-  goBack() {
-    if (history.state.navigationId > 1) {
-      this.location.back();
-    } else {
-      this.router.navigate(appRoutes.bilva.home);
-    }
-  }
-
   refresh() {
     window.location.reload();
   }

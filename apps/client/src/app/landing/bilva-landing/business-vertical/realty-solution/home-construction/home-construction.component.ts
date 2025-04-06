@@ -37,8 +37,4 @@ export class HomeConstructionComponent {
     this.selectedMenu = item.label;
     this.menuCtrl.close('home-construction');
   }
-
-  goBack() {
-    this.location.back();
-  }
 }

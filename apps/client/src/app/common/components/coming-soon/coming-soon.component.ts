@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { appRoutes } from '../../../app.routes';
-import { GoBackComponent } from '../go-back/go-back.component';
+import { GoBackDirective } from '../../directives/go-back.directive';
 
 @Component({
   selector: 'bilva-coming-soon',
   standalone: true,
-  imports: [CommonModule, RouterModule, IonicModule, GoBackComponent],
+  imports: [CommonModule, RouterModule, IonicModule, GoBackDirective],
   templateUrl: './coming-soon.component.html',
   styleUrl: './coming-soon.component.scss',
 })

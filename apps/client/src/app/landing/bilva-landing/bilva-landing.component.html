@@ -10,11 +10,8 @@
         />
       </ion-title>
       <ion-buttons slot="end">
-        <ion-button shape="round" (click)="goBack()">
+        <ion-button shape="round" bilvaGoBack>
           <ion-icon name="arrow-back-circle-outline"></ion-icon>
-        </ion-button>
-        <ion-button shape="round" (click)="refresh()">
-          <ion-icon name="refresh-circle-outline"></ion-icon>
         </ion-button>
         | @for (page of appPages;track $index) { @if (page.url) {
         <ion-button
