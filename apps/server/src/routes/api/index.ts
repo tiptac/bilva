@@ -10,9 +10,9 @@ export const router = express.Router();
 
 const assetsPath = path.join(__dirname, '..', '..', 'assets');
 
-router.use('/', swagger);
-
 router.use('/assets', serveIndex(assetsPath));
 router.use('/assets', express.static(assetsPath));
 
 router.use('/request-call-back', callBack);
+
+router.use('/', swagger);
