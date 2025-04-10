@@ -10,12 +10,12 @@ export class ProjectsService {
 
   getProjects(): Observable<Page<Project>> {
     return this.http.get<Page<Project>>(
-      '/assets/business/ownit/home-construction/projects.json'
+      'assets/business/ownit/home-construction/projects.json'
     );
   }
   getProject(id: number): Observable<Project> {
     return this.http.get<Project>(
-      `/assets/business/ownit/home-construction/projects/${id}/details.json`
+      `assets/business/ownit/home-construction/projects/${id}/details.json`
     );
   }
 }
