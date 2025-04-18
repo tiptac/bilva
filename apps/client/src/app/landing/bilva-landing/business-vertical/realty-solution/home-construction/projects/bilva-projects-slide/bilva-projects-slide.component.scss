@@ -27,6 +27,7 @@ f h2 {
 .image {
   transform: scaleX(-1);
   background-size: cover;
+  min-height: 15em;
 }
 
 ion-progress-bar {
