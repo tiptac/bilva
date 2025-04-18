@@ -1,0 +1,60 @@
+<ion-grid class="full-screen">
+  <ion-row class="full-screen">
+    <ion-col size="12" sizeLg="8" size class="left">
+      <div
+        class="image"
+        [style.background-image]="`url(assets/business/ownit/home-construction/projects/${project.id}/${project.thumbnail})`"
+      >
+        <div class="image-gradient"></div>
+      </div>
+    </ion-col>
+    <ion-col size="12" sizeLg="4" class="left">
+      <div class="text-gradient">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">Project ID</ion-col>
+            <ion-col>: {{ project.id }} </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Title</ion-col>
+            <ion-col>: {{ project.title }} </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Size</ion-col>
+            <ion-col>: {{ project.size }} sqft </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Levels</ion-col>
+            <ion-col>: {{ project.levels }} </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Contract Type</ion-col>
+            <ion-col>: {{ project.contractType }} </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">Completion</ion-col>
+            <ion-col>
+              <ion-progress-bar
+                color="success"
+                [value]="completion"
+              ></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4"> </ion-col>
+            <ion-col size="8">
+              <ion-button
+                color="dark"
+                size="small"
+                class="get-started mt-1"
+                [routerLink]="[project.id]"
+              >
+                KNOW MORE
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

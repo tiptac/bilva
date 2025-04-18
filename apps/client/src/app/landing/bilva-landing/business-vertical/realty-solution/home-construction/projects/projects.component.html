@@ -1,36 +1,38 @@
 <ion-content class="ion-padding">
-  <ion-row>
-    <ion-col class="header">
-      <ion-text>
-        <h1 color="dark" class="ion-no-margin">
-          <b> Our Projects </b>
-        </h1>
-      </ion-text>
-      <ion-text>
-        <p color="dark" class="ion-no-margin">
-          We build homes that are crafted with care, where quality meets comfort
-          and every detail is designed to evoke a sense of belonging and warmth.
-        </p>
-      </ion-text>
-    </ion-col>
-  </ion-row>
-  <ion-row *ngIf="projects$ | async as projects">
-    <ion-col
-      *ngFor="let project of projects"
-      size="12"
-      size-lg="6"
-      [routerLink]="[project.id]"
-    >
-      <ion-card class="project">
-        <ion-card-header>
-          <ion-card-title>{{ project.title }}</ion-card-title>
-          <ion-card-subtitle>
-            {{ project.description }}
-          </ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content> </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="header">
+        <ion-text>
+          <h1 color="dark" class="ion-no-margin">
+            <b> Our Projects </b>
+          </h1>
+        </ion-text>
+        <ion-text>
+          <p color="dark" class="ion-no-margin">
+            We build homes that are crafted with care, where quality meets
+            comfort and every detail is designed to evoke a sense of belonging
+            and warmth.
+          </p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="projects$ | async as projects" class="project-slides">
+      <ion-col size="12">
+        <swiper-container
+          loop="true"
+          navigation="true"
+          pagination="true"
+          auto="true"
+          keyboard="true"
+          mousewheel="true"
+          css-mode="true"
+          autoplay-delay="5000"
+        >
+          <swiper-slide *ngFor="let project of projects">
+            <bilva-home-contruction-project-slide [project]="project" />
+          </swiper-slide>
+        </swiper-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

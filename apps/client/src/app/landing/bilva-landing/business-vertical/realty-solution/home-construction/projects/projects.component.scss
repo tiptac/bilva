@@ -1,3 +1,7 @@
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
 ion-card.project {
   height: 100%;
 }
@@ -17,4 +21,24 @@ p {
 
 .header {
   padding-left: 1em;
+}
+
+:host,
+swiper-container {
+  height: 100%;
+}
+
+ion-content.ion-padding {
+  display: flex;
+  flex-direction: column;
+  ion-grid {
+    height: 100%;
+    ion-row.project-slides {
+      height: 100%;
+    }
+  }
+}
+
+bilva-home-contruction-project-slide {
+  height: 100%;
 }
