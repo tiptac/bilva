@@ -15,7 +15,13 @@
           "type": "progress"
         }
       },
-      "images": ["project1.jpg"]
+      "images": [
+        "project1.jpg",
+        "project1.jpg",
+        "project1.jpg",
+        "project1.jpg",
+        "project1.jpg"
+      ]
     },
     {
       "id": 2,
@@ -32,7 +38,13 @@
           "type": "progress"
         }
       },
-      "images": ["project2.webp"]
+      "images": [
+        "project2.webp",
+        "project2.webp",
+        "project2.webp",
+        "project2.webp",
+        "project2.webp"
+      ]
     }
   ]
 }

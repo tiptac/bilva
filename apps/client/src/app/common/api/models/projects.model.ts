@@ -21,4 +21,5 @@ export interface Project {
   thumbnail: string;
   description?: string;
   attributes: ProjectAttribute;
+  images: string[];
 }
