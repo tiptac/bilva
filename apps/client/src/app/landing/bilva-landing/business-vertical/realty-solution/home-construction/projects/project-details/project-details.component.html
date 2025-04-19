@@ -1,33 +1,25 @@
 <ion-content class="ion-padding" *ngIf="project$ | async as project">
-  <ion-card class="full-screen">
-    <ion-card-header>
-      <ion-card-title>{{ project.title }}</ion-card-title>
-      <ion-card-subtitle>
-        {{ project.description }}
-      </ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <swiper-container
-        loop="true"
-        navigation="true"
-        pagination="true"
-        pagination-clickable="true"
-        scrollbar="true"
-        auto="true"
-        keyboard="true"
-        mousewheel="true"
-        css-mode="true"
-        autoplay-delay="5000"
-        centered-slides="true"
-      >
-        @for (image of project.images; track $index) {
-        <swiper-slide>
-          <img
-            [src]="`assets/business/ownit/home-construction/projects/${project.id}/${image}`"
-          />
-        </swiper-slide>
-        }
-      </swiper-container>
-    </ion-card-content>
-  </ion-card>
+  <h2>{{ project.title }}</h2>
+  <h4>{{ project.description }}</h4>
+  <swiper-container
+    loop="true"
+    navigation="true"
+    pagination="true"
+    pagination-clickable="true"
+    scrollbar="true"
+    auto="true"
+    keyboard="true"
+    mousewheel="true"
+    css-mode="true"
+    autoplay-delay="5000"
+    centered-slides="true"
+  >
+    @for (image of project.images; track $index) {
+    <swiper-slide>
+      <img
+        [src]="`assets/business/ownit/home-construction/projects/${project.id}/${image}`"
+      />
+    </swiper-slide>
+    }
+  </swiper-container>
 </ion-content>
