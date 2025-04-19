@@ -1,14 +1,24 @@
-export enum ContractType {
-  Labor = 'Labor',
-  Material = 'Material',
+export type ProjectAttributeKey = string;
+export type ProjectAttributeData = string | number;
+
+export enum ProjectAttributeType {
+  raw = 'raw',
+  progress = 'progress',
 }
+
+export interface ProjectAttributeValue {
+  data: ProjectAttributeData;
+  type?: ProjectAttributeType;
+}
+
+export interface ProjectAttribute {
+  [key: ProjectAttributeKey]: ProjectAttributeData | ProjectAttributeValue;
+}
+
 export interface Project {
   id: number;
   title: string;
-  description?: string;
   thumbnail: string;
-  size: number;
-  levels: string;
-  contractType: ContractType;
-  completion: number;
+  description?: string;
+  attributes: ProjectAttribute;
 }

@@ -2,23 +2,33 @@
   "data": [
     {
       "id": 1,
-      "title": "Project 1",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "thumbnail": "project1.jpg",
-      "size": 2200,
-      "levels": "G+1",
-      "contractType": "Labor",
-      "completion": 0.9
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "attributes": {
+        "Title": "Project 1",
+        "Size": 2200,
+        "Levels": "G+1",
+        "Contract Type": "Labor",
+        "Completion": {
+          "data": 0.9,
+          "type": "progress"
+        }
+      }
     },
     {
       "id": 2,
-      "title": "Project 2",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "thumbnail": "project2.webp",
-      "size": 3400,
-      "levels": "G+1",
-      "contractType": "Material",
-      "completion": 0.5
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "attributes": {
+        "Title": "Project 2",
+        "Size": 3400,
+        "Levels": "G+1",
+        "Contract Type": "Material",
+        "Completion": {
+          "data": 0.5,
+          "type": "progress"
+        }
+      }
     }
   ]
 }
