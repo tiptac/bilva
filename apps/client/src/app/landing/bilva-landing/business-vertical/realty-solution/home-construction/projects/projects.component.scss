@@ -28,14 +28,13 @@ swiper-container {
   height: 100%;
 }
 
-ion-content.ion-padding {
-  ion-grid {
-    display: flex;
-    flex-direction: column; 
+ion-grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  ion-row.project-slides {
     height: 100%;
-    ion-row.project-slides {
-      height: 100%;
-    }
   }
 }
 
