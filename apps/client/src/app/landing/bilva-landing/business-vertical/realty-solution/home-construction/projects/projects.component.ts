@@ -25,7 +25,7 @@ export class ProjectsComponent {
   projects$: Observable<Array<Project>>;
 
   constructor(private projectsService: ProjectsService) {
-    this.projects$ = this.projectsService.getProjects().pipe(
+    this.projects$ = this.projectsService.getProjects$().pipe(
       map((r) => {
         return r.data;
       })
