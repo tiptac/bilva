@@ -2,7 +2,7 @@
   overflow-y: scroll;
 }
 
-img {
+img.reality-solution {
   min-height: 20em;
   height: 20em;
   max-height: 20em;
@@ -20,4 +20,10 @@ ion-card:hover {
 
 ion-card-title {
   cursor: pointer;
+}
+
+img.logo {
+  display: inline;
+  height: 1em;
+  margin-bottom: -0.25em;
 }
