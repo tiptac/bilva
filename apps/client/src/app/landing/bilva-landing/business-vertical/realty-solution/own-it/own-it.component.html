@@ -34,8 +34,11 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+    <ion-col class="pt-0 pb-0 mb-1p ion-hide-lg-up" size="12" size-lg="2.4">
       <ng-container *ngTemplateOutlet="buySellCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="buySellTestimonials"></ng-container>
     </ion-col>
 
     <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
@@ -56,8 +59,13 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+    <ion-col class="pt-0 pb-0 mb-1p ion-hide-lg-up" size="12" size-lg="2.4">
       <ng-container *ngTemplateOutlet="homeConstructionCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+      <ng-container
+        *ngTemplateOutlet="homeConstructionTestimonials"
+      ></ng-container>
     </ion-col>
 
     <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
@@ -77,8 +85,13 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+    <ion-col class="pt-0 pb-0 mb-1p ion-hide-lg-up" size="12" size-lg="2.4">
       <ng-container *ngTemplateOutlet="homeInteriorsCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+      <ng-container
+        *ngTemplateOutlet="homeInteriorsTestimonials"
+      ></ng-container>
     </ion-col>
 
     <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
@@ -98,8 +111,12 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+    <ion-col class="pt-0 pb-0 mb-1p ion-hide-lg-up" size="12" size-lg="2.4">
       <ng-container *ngTemplateOutlet="assetManagementCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="assetManagementTestimonials">
+      </ng-container>
     </ion-col>
 
     <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
@@ -119,25 +136,52 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
+    <ion-col class="pt-0 pb-0 mb-1p ion-hide-lg-up" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="relocationSupportCharges"></ng-container>
+    </ion-col>
     <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="relocationSupportTestimonials">
+      </ng-container>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-hide-lg-down">
+    <ion-col class="pt-0 pb-0 mb-1p" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="buySellCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 pb-0 mb-1p" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="homeConstructionCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 pb-0 mb-1p" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="homeInteriorsCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 pb-0 mb-1p" size="12" size-lg="2.4">
+      <ng-container *ngTemplateOutlet="assetManagementCharges"></ng-container>
+    </ion-col>
+    <ion-col class="pt-0 pb-0 mb-1p" size="12" size-lg="2.4">
       <ng-container *ngTemplateOutlet="relocationSupportCharges"></ng-container>
     </ion-col>
   </ion-row>
+
   <ion-row class="ion-hide-lg-down">
     <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="buySellCharges"></ng-container>
+      <ng-container *ngTemplateOutlet="buySellTestimonials"></ng-container>
     </ion-col>
     <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="homeConstructionCharges"></ng-container>
+      <ng-container *ngTemplateOutlet="homeConstructionTestimonials">
+      </ng-container>
     </ion-col>
     <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="homeInteriorsCharges"></ng-container>
+      <ng-container *ngTemplateOutlet="homeInteriorsTestimonials">
+      </ng-container>
     </ion-col>
     <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="assetManagementCharges"></ng-container>
+      <ng-container *ngTemplateOutlet="assetManagementTestimonials">
+      </ng-container>
     </ion-col>
     <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="relocationSupportCharges"></ng-container>
+      <ng-container *ngTemplateOutlet="relocationSupportTestimonials">
+      </ng-container>
     </ion-col>
   </ion-row>
 </ion-grid>
@@ -203,6 +247,77 @@
       <br />
       <br />
       <p>Customised</p>
+    </ion-card-content>
+  </ion-card>
+</ng-template>
+
+<ng-template #buySellTestimonials>
+  <ion-card class="testimonials m-0" mode="md">
+    <ion-card-content class="ion-text-center">
+      <b>Testimonials</b>
+      <br />
+      <br />
+      <p>
+        The testimonials we receive are a testament to our commitment to
+        excellence, offering real-life stories of how we’ve made a difference
+        for our clients.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ng-template>
+<ng-template #homeConstructionTestimonials>
+  <ion-card class="testimonials m-0" mode="md">
+    <ion-card-content class="ion-text-center">
+      <b>Testimonials</b>
+      <br />
+      <br />
+      <p>
+        The testimonials we receive are a testament to our commitment to
+        excellence, offering real-life stories of how we’ve made a difference
+        for our clients.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ng-template>
+<ng-template #homeInteriorsTestimonials>
+  <ion-card class="testimonials m-0" mode="md">
+    <ion-card-content class="ion-text-center">
+      <b>Testimonials</b>
+      <br />
+      <br />
+      <p>
+        The testimonials we receive are a testament to our commitment to
+        excellence, offering real-life stories of how we’ve made a difference
+        for our clients.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ng-template>
+<ng-template #assetManagementTestimonials>
+  <ion-card class="testimonials m-0" mode="md">
+    <ion-card-content class="ion-text-center">
+      <b>Testimonials</b>
+      <br />
+      <br />
+      <p>
+        The testimonials we receive are a testament to our commitment to
+        excellence, offering real-life stories of how we’ve made a difference
+        for our clients.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ng-template>
+<ng-template #relocationSupportTestimonials>
+  <ion-card class="testimonials m-0" mode="md">
+    <ion-card-content class="ion-text-center">
+      <b>Testimonials</b>
+      <br />
+      <br />
+      <p>
+        The testimonials we receive are a testament to our commitment to
+        excellence, offering real-life stories of how we’ve made a difference
+        for our clients.
+      </p>
     </ion-card-content>
   </ion-card>
 </ng-template>
