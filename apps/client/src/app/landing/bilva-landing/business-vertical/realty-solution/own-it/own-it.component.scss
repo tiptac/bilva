@@ -13,9 +13,12 @@ img.reality-solution {
 
 ion-card {
   height: 100%;
+  border: 0.2em solid black;
+  cursor: pointer;
 }
+
 ion-card:hover {
-  border: 0.1em solid;
+  border: 0.2em solid white;
 }
 
 ion-card-title {
