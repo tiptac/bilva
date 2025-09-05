@@ -1,4 +1,5 @@
 <ion-text color="dark" mode="md">
+  <!-- <h2 class="ion-text-center" style="font-family: 'Bradley Hand', cursive"> -->
   <h2
     class="ion-text-center"
     style="font-family: 'Times New Roman', Times, serif"
@@ -17,7 +18,7 @@
 
 <ion-grid>
   <ion-row>
-    <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
+    <ion-col size="12" size-lg="2.4">
       <ion-card class="m-0" mode="md">
         <img
           class="reality-solution"
@@ -34,11 +35,8 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="buySellCharges"></ng-container>
-    </ion-col>
 
-    <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
+    <ion-col size="12" size-lg="2.4">
       <ion-card class="m-0" mode="md">
         <img
           class="reality-solution"
@@ -56,11 +54,8 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="homeConstructionCharges"></ng-container>
-    </ion-col>
 
-    <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
+    <ion-col size="12" size-lg="2.4">
       <ion-card class="m-0" mode="md">
         <img
           class="reality-solution"
@@ -77,11 +72,8 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="homeInteriorsCharges"></ng-container>
-    </ion-col>
 
-    <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
+    <ion-col size="12" size-lg="2.4">
       <ion-card class="m-0" mode="md">
         <img
           class="reality-solution"
@@ -98,11 +90,8 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="assetManagementCharges"></ng-container>
-    </ion-col>
 
-    <ion-col class="pb-0 mb-1p" size="12" size-lg="2.4">
+    <ion-col size="12" size-lg="2.4">
       <ion-card class="m-0" mode="md">
         <img
           class="reality-solution"
@@ -119,90 +108,5 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="pt-0 ion-hide-lg-up" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="relocationSupportCharges"></ng-container>
-    </ion-col>
-  </ion-row>
-  <ion-row class="ion-hide-lg-down">
-    <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="buySellCharges"></ng-container>
-    </ion-col>
-    <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="homeConstructionCharges"></ng-container>
-    </ion-col>
-    <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="homeInteriorsCharges"></ng-container>
-    </ion-col>
-    <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="assetManagementCharges"></ng-container>
-    </ion-col>
-    <ion-col class="pt-0" size="12" size-lg="2.4">
-      <ng-container *ngTemplateOutlet="relocationSupportCharges"></ng-container>
-    </ion-col>
   </ion-row>
 </ion-grid>
-
-<ng-template #buySellCharges>
-  <ion-card class="m-0" mode="md">
-    <ion-card-content class="ion-text-center">
-      <b>Charges</b>
-      <br />
-      <br />
-      <p>
-        0% from sellers
-        <br />
-        1% from buyers
-      </p>
-    </ion-card-content>
-  </ion-card>
-</ng-template>
-
-<ng-template #homeConstructionCharges>
-  <ion-card class="m-0" mode="md">
-    <ion-card-content class="ion-text-center">
-      <b>Charges</b>
-      <br />
-      <br />
-      <p>
-        Full Contract: 1850, 2050, 2300/sqft
-        <br />
-        Hybrid Contract: 150/sqft
-        <br />
-        Labour Contract: 1100/sqft
-      </p>
-    </ion-card-content>
-  </ion-card>
-</ng-template>
-
-<ng-template #homeInteriorsCharges>
-  <ion-card class="m-0" mode="md">
-    <ion-card-content class="ion-text-center">
-      <b>Charges</b>
-      <br />
-      <br />
-      <p>Customised</p>
-    </ion-card-content>
-  </ion-card>
-</ng-template>
-
-<ng-template #assetManagementCharges>
-  <ion-card class="m-0" mode="md">
-    <ion-card-content class="ion-text-center">
-      <b>Charges</b>
-      <br />
-      <br />
-      <p>Customised</p>
-    </ion-card-content>
-  </ion-card>
-</ng-template>
-
-<ng-template #relocationSupportCharges>
-  <ion-card class="m-0" mode="md">
-    <ion-card-content class="ion-text-center">
-      <b>Charges</b>
-      <br />
-      <br />
-      <p>Customised</p>
-    </ion-card-content>
-  </ion-card>
-</ng-template>
