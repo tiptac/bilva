@@ -34,11 +34,13 @@ img.logo {
 div.testimonials {
   overflow-x: scroll;
   width: 100%;
+  height: 30%;
   margin-left: 0.5em;
   margin-right: 0.5em;
   white-space: nowrap;
 
   div.testimonial {
+    height: 100%;
     width: 32.6%;
     display: inline-block;
     margin-left: 0.25em;
