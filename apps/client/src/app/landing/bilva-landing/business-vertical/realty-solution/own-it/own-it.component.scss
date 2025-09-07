@@ -30,3 +30,19 @@ img.logo {
   height: 1em;
   margin-bottom: -0.25em;
 }
+
+div.testimonials {
+  overflow-x: scroll;
+  width: 100%;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  white-space: nowrap;
+
+  div.testimonial {
+    width: 32.6%;
+    display: inline-block;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    margin-bottom: 1em;
+  }
+}

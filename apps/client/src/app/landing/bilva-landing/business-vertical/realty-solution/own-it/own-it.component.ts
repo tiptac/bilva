@@ -55,6 +55,25 @@ export class OwnItComponent implements AfterViewInit {
     },
   ];
 
+  testimonials = [
+    {
+      name: 'Shreyas Kale',
+      customerId: 'CRN10001',
+    },
+    {
+      name: 'Vinay Vivekananda',
+      customerId: 'CRN10002',
+    },
+    {
+      name: 'Darshan R',
+      customerId: 'CRN10003',
+    },
+    {
+      name: 'Sujan P',
+      customerId: 'CRN10003',
+    },
+  ];
+
   ngAfterViewInit(): void {
     setTimeout(() => {
       const testimonialsTxt = document.getElementById('testimonialsTxt');
