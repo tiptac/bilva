@@ -44,5 +44,13 @@ div.testimonials {
     margin-left: 0.25em;
     margin-right: 0.25em;
     margin-bottom: 1em;
+    .testimonial-text {
+      white-space: wrap;
+    }
   }
+}
+
+.customer-id {
+  color: gray;
+  font-size: small;
 }

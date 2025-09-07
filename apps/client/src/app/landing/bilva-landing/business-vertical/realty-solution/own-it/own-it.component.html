@@ -54,20 +54,42 @@
       </b>
     </h2>
   </ion-text>
-  <div class="testimonials">
+  <div class="testimonials ion-hide-lg-down">
     @for (testimonial of testimonials; track $index) {
     <div class="testimonial">
-      <ion-card class="m-0" mode="md">
-        <ion-card-header class="ion-text-left">
-          <ion-card-title>{{ testimonial.name }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content class="ion-text-left">
-          {{ testimonial.customerId }}
-          <br />
-          <br />
-        </ion-card-content>
-      </ion-card>
+      <ng-container
+        [ngTemplateOutlet]="testimonialTemplate"
+        [ngTemplateOutletContext]="{testimonial}"
+      >
+      </ng-container>
     </div>
     }
   </div>
+  <ion-grid class="ion-hide-lg-up">
+    @for (testimonial of testimonials; track $index) {
+    <ng-container
+      [ngTemplateOutlet]="testimonialTemplate"
+      [ngTemplateOutletContext]="{testimonial}"
+    >
+    </ng-container>
+    }
+  </ion-grid>
 </ion-content>
+
+<ng-template #testimonialTemplate let-testimonial="testimonial">
+  <ion-card class="m-0" mode="md">
+    <ion-card-header class="ion-text-left">
+      <ion-card-title>
+        {{ testimonial.name }}
+        <span class="customer-id"> ({{ testimonial.customerId }}) </span>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-left">
+      <bilva-rating [rating]="testimonial.rating" />
+      <br />
+      <ion-text class="testimonial-text">
+        {{ testimonial.text }}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ng-template>

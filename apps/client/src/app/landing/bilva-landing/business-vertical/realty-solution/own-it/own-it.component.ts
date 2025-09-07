@@ -3,12 +3,13 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { IonContent } from '@ionic/angular/standalone';
+import { RatingComponent } from '../../../../../common/components/rating/rating.component';
 import { appRoutes } from '../../../../../app.routes';
 
 @Component({
   selector: 'bilva-own-it',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterModule],
+  imports: [CommonModule, IonicModule, RouterModule, RatingComponent],
   templateUrl: './own-it.component.html',
   styleUrl: './own-it.component.scss',
 })
@@ -57,20 +58,28 @@ export class OwnItComponent implements AfterViewInit {
 
   testimonials = [
     {
-      name: 'Shreyas Kale',
+      name: 'Customer Name 1',
       customerId: 'CRN10001',
+      rating: 4,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
     },
     {
-      name: 'Vinay Vivekananda',
+      name: 'Customer Name 2',
       customerId: 'CRN10002',
+      rating: 5,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
-      name: 'Darshan R',
+      name: 'Customer Name 3',
       customerId: 'CRN10003',
+      rating: 4,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
-      name: 'Sujan P',
-      customerId: 'CRN10003',
+      name: 'Customer Name 4',
+      customerId: 'CRN10004',
+      rating: 2,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
   ];
 
