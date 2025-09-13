@@ -1,29 +1,28 @@
 :host {
   height: 100%;
   min-height: 100%;
-}
-img {
-  width: 20rem;
+  width: 100%;
 }
 
 .bilva-bilva-slide {
-  padding-top: 5%;
   background-color: black;
-  min-height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .container {
   width: fit-content;
-}
-
-.tagline {
   text-align: center;
-  text-align-last: right;
-  text-overflow: clip;
-  text-wrap: nowrap;
-  letter-spacing: 0.6rem;
-  margin-left: 10px;
+
+  margin: auto;
+  img {
+    width: 20rem;
+  }
+  .tagline {
+    text-align: center;
+    text-align-last: right;
+    text-overflow: clip;
+    text-wrap: nowrap;
+    letter-spacing: 0.6rem;
+    margin-left: 10px;
+  }
 }
