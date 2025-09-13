@@ -8,19 +8,26 @@
     </b>
   </h2>
 </ion-text>
+<div class="testimonials ion-hide-lg-down">
+  @for (testimonial of testimonials; track $index) {
+  <div class="testimonial">
+    <ng-container
+      [ngTemplateOutlet]="testimonialTemplate"
+      [ngTemplateOutletContext]="{testimonial}"
+    >
+    </ng-container>
+  </div>
+  }
+</div>
 
-<ion-grid>
-  <ion-row>
-    @for (testimonial of testimonials; track $index) {
-    <ion-col size="12" size-lg="4">
-      <ng-container
-        [ngTemplateOutlet]="testimonialTemplate"
-        [ngTemplateOutletContext]="{testimonial}"
-      >
-      </ng-container>
-    </ion-col>
-    }
-  </ion-row>
+<ion-grid class="ion-hide-lg-up">
+  @for (testimonial of testimonials; track $index) {
+  <ng-container
+    [ngTemplateOutlet]="testimonialTemplate"
+    [ngTemplateOutletContext]="{testimonial}"
+  >
+  </ng-container>
+  }
 </ion-grid>
 
 <ng-template #testimonialTemplate let-testimonial="testimonial">
