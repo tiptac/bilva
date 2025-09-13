@@ -13,21 +13,10 @@ ion-card {
   cursor: pointer;
 }
 
-ion-card:hover {
+ion-card.solution:hover {
   border: 0.2em solid white;
 }
 
 ion-card-title {
   cursor: pointer;
-}
-
-img.logo {
-  display: inline;
-  height: 1em;
-  margin-bottom: -0.25em;
-}
-
-.customer-id {
-  color: gray;
-  font-size: small;
 }
