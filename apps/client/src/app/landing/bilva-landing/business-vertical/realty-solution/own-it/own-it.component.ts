@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { IonContent } from '@ionic/angular/standalone';
-import { RatingComponent } from '../../../../../common/components/rating/rating.component';
 import { appRoutes } from '../../../../../app.routes';
+import { RatingComponent } from '../../../../../common/components/rating/rating.component';
 
 @Component({
   selector: 'bilva-own-it',
@@ -13,7 +13,7 @@ import { appRoutes } from '../../../../../app.routes';
   templateUrl: './own-it.component.html',
   styleUrl: './own-it.component.scss',
 })
-export class OwnItComponent implements AfterViewInit {
+export class OwnItComponent {
   @ViewChild('content', { static: false })
   content!: IonContent;
 
@@ -82,15 +82,4 @@ export class OwnItComponent implements AfterViewInit {
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
   ];
-
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      const testimonialsTxt = document.getElementById('testimonialsTxt');
-      this.content.scrollToPoint(
-        undefined,
-        testimonialsTxt?.getBoundingClientRect().y,
-        1000
-      );
-    }, 5000);
-  }
 }
