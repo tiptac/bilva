@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-text color="dark" mode="md">
+    <h2
+      class="ion-text-center"
+      style="font-family: 'Times New Roman', Times, serif"
+    >
+      <b>
+        <span> Client Testimonials </span>
+      </b>
+    </h2>
+  </ion-text>
+  <div class="testimonials">
+    @for (testimonial of testimonials; track $index) {
+    <div class="testimonial">
+      <ng-container
+        [ngTemplateOutlet]="testimonialTemplate"
+        [ngTemplateOutletContext]="{testimonial}"
+      >
+      </ng-container>
+    </div>
+    }
+  </div>
+</ion-content>
+
+<ng-template #testimonialTemplate let-testimonial="testimonial">
+  <ion-card class="m-0" mode="md">
+    <ion-card-header class="ion-text-left">
+      <ion-card-title>
+        {{ testimonial.name }}
+        <span class="customer-id"> ({{ testimonial.customerId }}) </span>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-left">
+      <bilva-rating [rating]="testimonial.rating" />
+      <br />
+      <ion-text class="testimonial-text">
+        {{ testimonial.text }}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ng-template>

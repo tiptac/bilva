@@ -1,0 +1,40 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { RatingComponent } from '../../../../../../common/components/rating/rating.component';
+
+@Component({
+  selector: 'bilva-own-it-testimonials',
+  standalone: true,
+  imports: [CommonModule, IonicModule, RatingComponent],
+  templateUrl: './testimonials.component.html',
+  styleUrl: './testimonials.component.scss',
+})
+export class TestimonialsComponent {
+  testimonials = [
+    {
+      name: 'Customer Name 1',
+      customerId: 'CRN10001',
+      rating: 4,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+    },
+    {
+      name: 'Customer Name 2',
+      customerId: 'CRN10002',
+      rating: 5,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+    {
+      name: 'Customer Name 3',
+      customerId: 'CRN10003',
+      rating: 4,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+    {
+      name: 'Customer Name 4',
+      customerId: 'CRN10004',
+      rating: 2,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+  ];
+}

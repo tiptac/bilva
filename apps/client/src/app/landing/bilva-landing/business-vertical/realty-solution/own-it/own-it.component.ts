@@ -4,12 +4,12 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { IonContent } from '@ionic/angular/standalone';
 import { appRoutes } from '../../../../../app.routes';
-import { RatingComponent } from '../../../../../common/components/rating/rating.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @Component({
   selector: 'bilva-own-it',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterModule, RatingComponent],
+  imports: [CommonModule, IonicModule, RouterModule, TestimonialsComponent],
   templateUrl: './own-it.component.html',
   styleUrl: './own-it.component.scss',
 })
@@ -53,33 +53,6 @@ export class OwnItComponent {
       title: 'Relocation Support',
       content: 'Simplifying your shift with expert care every step of the way.',
       charges: ['Price tailored to your move'],
-    },
-  ];
-
-  testimonials = [
-    {
-      name: 'Customer Name 1',
-      customerId: 'CRN10001',
-      rating: 4,
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-    },
-    {
-      name: 'Customer Name 2',
-      customerId: 'CRN10002',
-      rating: 5,
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    },
-    {
-      name: 'Customer Name 3',
-      customerId: 'CRN10003',
-      rating: 4,
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    },
-    {
-      name: 'Customer Name 4',
-      customerId: 'CRN10004',
-      rating: 2,
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
   ];
 }
