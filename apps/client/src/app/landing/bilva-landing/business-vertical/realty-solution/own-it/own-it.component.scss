@@ -2,36 +2,8 @@
   overflow-y: auto;
 }
 
-img.reality-solution {
-  min-height: 20em;
-  height: 20em;
-  max-height: 20em;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-ion-card {
-  height: 100%;
-  border: 0.2em solid black;
-  cursor: pointer;
-}
-
-ion-card:hover {
-  border: 0.2em solid white;
-}
-
-ion-card-title {
-  cursor: pointer;
-}
-
 img.logo {
   display: inline;
   height: 1em;
   margin-bottom: -0.25em;
-}
-
-.customer-id {
-  color: gray;
-  font-size: small;
 }

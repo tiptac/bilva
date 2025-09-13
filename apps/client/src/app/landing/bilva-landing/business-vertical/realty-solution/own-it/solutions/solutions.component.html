@@ -1,0 +1,55 @@
+<ion-grid>
+  <ion-row>
+    @for (solution of solutions; track $index) {
+    <ion-col size="12" size-lg="2.4">
+      <ion-card class="m-0" mode="md">
+        <img
+          class="reality-solution"
+          [alt]="solution.title"
+          [src]="solution.imgSrc"
+          loading="lazy"
+        />
+        <ion-card-header class="ion-text-center">
+          <ion-card-title>{{ solution.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-text-left">
+          {{ solution.content }}
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="12" size-lg="2.4" class="ion-hide-lg-up">
+      <ion-card class="m-0" mode="md">
+        <ion-card-content>
+          <ng-container
+            [ngTemplateOutlet]="chargesTemplate"
+            [ngTemplateOutletContext]="{solution}"
+          >
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    }
+  </ion-row>
+
+  <ion-row class="ion-hide-lg-down">
+    @for (solution of solutions; track $index) {
+    <ion-col size="12" size-lg="2.4">
+      <ion-card class="m-0" mode="md">
+        <ion-card-content class="ion-text-left">
+          <ng-container
+            [ngTemplateOutlet]="chargesTemplate"
+            [ngTemplateOutletContext]="{solution}"
+          >
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    }
+  </ion-row>
+</ion-grid>
+
+<ng-template #chargesTemplate let-solution="solution">
+  Charges : @for (charges of solution.charges; track $index) {
+  <br />
+  {{ charges }} }
+</ng-template>
