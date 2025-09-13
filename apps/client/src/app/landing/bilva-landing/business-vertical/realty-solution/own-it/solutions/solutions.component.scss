@@ -19,5 +19,7 @@ ion-card.solution:hover {
 }
 
 ion-card-title {
-  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
