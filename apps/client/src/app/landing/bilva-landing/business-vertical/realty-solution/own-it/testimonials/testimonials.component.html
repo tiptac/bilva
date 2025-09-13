@@ -33,6 +33,15 @@
 <ng-template #testimonialTemplate let-testimonial="testimonial">
   <ion-card class="m-0" mode="md">
     <ion-card-header class="ion-text-left">
+      <iframe
+        width="560"
+        height="315"
+        [src]="testimonial.url | safeUrl"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
       <ion-card-title>
         {{ testimonial.name }}
         <span class="customer-id"> ({{ testimonial.customerId }}) </span>
