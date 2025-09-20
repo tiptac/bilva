@@ -1,3 +1,9 @@
+img.logo {
+  display: inline;
+  height: 1em;
+  margin-bottom: -0.25em;
+}
+
 img.reality-solution {
   min-height: 20em;
   height: 20em;
@@ -8,10 +14,15 @@ img.reality-solution {
   border-top: 0.2em solid gray;
 }
 
-ion-card {
+ion-card.solution {
   height: 100%;
-  border: 0.2em solid black;
   cursor: pointer;
+  border: 0.2em solid black;
+  ion-card-content {
+    div.charges {
+      margin-top: 1em;
+    }
+  }
 }
 
 ion-card.solution:hover {
@@ -22,10 +33,4 @@ ion-card-title {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-img.logo {
-  display: inline;
-  height: 1em;
-  margin-bottom: -0.25em;
 }
