@@ -1,51 +1,54 @@
-<ion-text color="dark" mode="md">
-  <h2
-    class="ion-text-center"
-    style="font-family: 'Times New Roman', Times, serif"
-  >
-    <b> <span> Client Testimonials </span> </b>
-  </h2>
-</ion-text>
-<!-- <div class="testimonials ion-hide-lg-down">
-  @for (testimonial of testimonials; track $index) {
-  <div class="testimonial">
-    <ng-container
-      [ngTemplateOutlet]="testimonialTemplate"
-      [ngTemplateOutletContext]="{testimonial}"
+<div class="header">
+  <ion-text color="dark" mode="md">
+    <h2
+      class="ion-text-center"
+      style="font-family: 'Times New Roman', Times, serif"
     >
-    </ng-container>
-  </div>
-  }
-</div> -->
-
-<ion-grid class="ion-hide-lg-down">
-  <ion-row *ngFor="let row of rows; let i = index" class="page">
-    @for (col of cols; let j=$index;track $index) { @if((((i*3)+j) <
-    testimonials.length)) {
-    <ion-col size="12" size-lg="4">
-      <ng-container
-        [ngTemplateOutlet]="testimonialTemplate"
-        [ngTemplateOutletContext]="{ testimonial: testimonials[i * 3 + j] }"
-      >
-      </ng-container>
-    </ion-col>
-    } }
-  </ion-row>
-</ion-grid>
-
-<ion-grid class="ion-hide-lg-up">
-  <ion-row>
+      <b> <span> Client Testimonials </span> </b>
+    </h2>
+  </ion-text>
+</div>
+<div class="body">
+  <div class="testimonials ion-hide-lg-down">
     @for (testimonial of testimonials; track $index) {
-    <ion-col size="12" size-lg="4">
+    <div class="testimonial">
       <ng-container
         [ngTemplateOutlet]="testimonialTemplate"
         [ngTemplateOutletContext]="{testimonial}"
       >
       </ng-container>
-    </ion-col>
+    </div>
     }
-  </ion-row>
-</ion-grid>
+  </div>
+  <!-- <ion-grid class="ion-hide-lg-down">
+    <ion-row *ngFor="let row of rows; let i = index" class="page">
+      @for (col of cols; let j=$index;track $index) { @if((((i*3)+j) <
+      testimonials.length)) {
+      <ion-col size="12" size-lg="4">
+        <ng-container
+          [ngTemplateOutlet]="testimonialTemplate"
+          [ngTemplateOutletContext]="{ testimonial: testimonials[i * 3 + j] }"
+        >
+        </ng-container>
+      </ion-col>
+      } }
+    </ion-row>
+  </ion-grid> -->
+
+  <ion-grid class="ion-hide-lg-up">
+    <ion-row>
+      @for (testimonial of testimonials; track $index) {
+      <ion-col size="12" size-lg="4">
+        <ng-container
+          [ngTemplateOutlet]="testimonialTemplate"
+          [ngTemplateOutletContext]="{testimonial}"
+        >
+        </ng-container>
+      </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+</div>
 
 <ng-template #testimonialTemplate let-testimonial="testimonial">
   <ion-card class="m-0" mode="md">

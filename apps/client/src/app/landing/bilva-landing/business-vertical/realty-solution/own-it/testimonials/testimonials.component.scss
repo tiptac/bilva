@@ -1,3 +1,13 @@
+:host {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .body {
+    flex-grow: 1;
+  }
+}
+
 div.testimonials {
   overflow-x: auto;
   overflow-y: hidden;
