@@ -2,9 +2,18 @@
 
 :host {
   overflow-y: auto;
+  display: flex;
+  height: 100%;
+  .body {
+    flex-grow: 1;
+    swiper-container {
+      height: 100%;
+    }
+  }
 }
 
-:host,
-swiper-container {
-  height: 100%;
+img.logo {
+  display: inline;
+  height: 1em;
+  margin-bottom: -0.25em;
 }
