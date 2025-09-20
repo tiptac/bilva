@@ -22,14 +22,13 @@ export class SolutionsComponent {
       imgSrc: 'assets/images/HS.WEBP',
       title: 'Home Construction',
       content:
-        'Creating timeless spaces with elegance, lasting quality, and fair pricing.',
+        'Building spaces that last, with refined design and honest value.',
       charges: ['Turnkey - Rs1950/SqFt', 'Hybrid - Rs350/SqFt'],
     },
     {
       imgSrc: 'assets/images/HI.webp',
       title: 'Home Interiors',
-      content:
-        'Smart yet stylish spaces designed to enrich your everyday life.',
+      content: 'Smart property solutions to secure alue and enhance returns.',
       charges: ['Tailored, once we know your vibe!'],
     },
     {
