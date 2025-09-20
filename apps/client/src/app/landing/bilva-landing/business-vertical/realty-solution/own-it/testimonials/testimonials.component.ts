@@ -42,4 +42,6 @@ export class TestimonialsComponent {
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
   ];
+  rows = new Array(Math.floor(this.testimonials.length / 3) + 1);
+  cols = Array(3);
 }
