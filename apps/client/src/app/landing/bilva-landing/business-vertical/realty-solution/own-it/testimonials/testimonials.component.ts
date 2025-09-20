@@ -41,6 +41,34 @@ export class TestimonialsComponent {
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
+    {
+      name: 'Customer Name 5',
+      customerId: 'CRN10004',
+      rating: 2,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
+    },
+    {
+      name: 'Customer Name 6',
+      customerId: 'CRN10004',
+      rating: 2,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
+    },
+    {
+      name: 'Customer Name 7',
+      customerId: 'CRN10004',
+      rating: 2,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
+    },
+    {
+      name: 'Customer Name 8',
+      customerId: 'CRN10004',
+      rating: 2,
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
+    },
   ];
   rows = new Array(Math.floor(this.testimonials.length / 3) + 1);
   cols = Array(3);
