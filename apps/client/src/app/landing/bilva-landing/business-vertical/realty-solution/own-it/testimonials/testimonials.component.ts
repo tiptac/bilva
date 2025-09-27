@@ -1,17 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { RatingComponent } from '../../../../../../common/components/rating/rating.component';
 import { SafeUrl } from './safe.pipe';
+import { TruncatePipe } from './truncate.pipe';
 
 @Component({
   selector: 'bilva-own-it-testimonials',
   standalone: true,
-  imports: [CommonModule, IonicModule, RatingComponent, SafeUrl],
+  imports: [CommonModule, IonicModule, RatingComponent, SafeUrl, TruncatePipe],
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.scss',
 })
 export class TestimonialsComponent {
+  isModalOpen = false;
   testimonials = [
     {
       name: 'Customer Name 1',
@@ -72,4 +74,11 @@ export class TestimonialsComponent {
   ];
   rows = new Array(Math.floor(this.testimonials.length / 3) + 1);
   cols = Array(3);
+
+  onWillDismiss() {}
+
+  // @HostListener('click', ['$event.target'])
+  // onClick() {
+  //   this.isModalOpen = false;
+  // }
 }
