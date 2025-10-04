@@ -24,3 +24,9 @@ ion-item.active {
   width: 200px;
   object-fit: cover;
 }
+
+ion-header,
+ion-footer,
+ionic-toolbar {
+  background-color: black;
+}
