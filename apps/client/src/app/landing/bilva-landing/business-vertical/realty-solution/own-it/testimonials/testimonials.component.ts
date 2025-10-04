@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { RatingComponent } from '../../../../../../common/components/rating/rating.component';
-import { SafeUrl } from './safe.pipe';
-import { TruncatePipe } from './truncate.pipe';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 @Component({
   selector: 'bilva-own-it-testimonials',
   standalone: true,
-  imports: [CommonModule, IonicModule, RatingComponent, SafeUrl, TruncatePipe],
+  imports: [CommonModule, IonicModule, TestimonialComponent],
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.scss',
 })

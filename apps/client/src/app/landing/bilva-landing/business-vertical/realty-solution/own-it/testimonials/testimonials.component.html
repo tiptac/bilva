@@ -12,11 +12,7 @@
   <div class="testimonials ion-hide-lg-down">
     @for (testimonial of testimonials; track $index) {
     <div class="testimonial">
-      <ng-container
-        [ngTemplateOutlet]="testimonialTemplate"
-        [ngTemplateOutletContext]="{testimonial}"
-      >
-      </ng-container>
+      <bilva-own-it-testimonial [testimonial]="testimonial" />
     </div>
     }
   </div>
@@ -39,62 +35,11 @@
     <ion-row>
       @for (testimonial of testimonials; track $index) {
       <ion-col size="12" size-lg="4">
-        <ng-container
-          [ngTemplateOutlet]="testimonialTemplate"
-          [ngTemplateOutletContext]="{testimonial}"
-        >
-        </ng-container>
+        <bilva-own-it-testimonial [testimonial]="testimonial" />
       </ion-col>
       }
     </ion-row>
   </ion-grid>
 </div>
 
-<ng-template #testimonialTemplate let-testimonial="testimonial">
-  <ion-card class="m-0" mode="md">
-    <ion-card-header class="ion-text-left">
-      <iframe
-        [src]="testimonial.url | safeUrl"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-      <ion-card-title>
-        {{ testimonial.name }}
-        <span class="customer-id"> ({{ testimonial.customerId }}) </span>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="ion-text-left">
-      <bilva-rating [rating]="testimonial.rating" />
-      <br />
-      <ion-text class="testimonial-text">
-        {{ testimonial.text | truncate : { limit: 100, completeWords: true } }}
-        <ion-text id="read-more" expand="block" (click)="isModalOpen = true">
-          Read More
-        </ion-text>
-        <ion-modal [isOpen]="isModalOpen">
-          <ng-template>
-            <ion-content class="ion-padding">
-              {{ testimonial.name }}
-              <span class="customer-id"> ({{ testimonial.customerId }}) </span>
-              <br />
-              <br />
-              <bilva-rating [rating]="testimonial.rating" />
-              <p>
-                {{ testimonial.text }}
-              </p>
-            </ion-content>
-            <ion-footer>
-              <ion-toolbar>
-                <ion-buttons slot="end">
-                  <ion-button (click)="isModalOpen = false">Close</ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-            </ion-footer>
-          </ng-template>
-        </ion-modal>
-      </ion-text>
-    </ion-card-content>
-  </ion-card>
-</ng-template>
+<ng-template #testimonialTemplate let-testimonial="testimonial"> </ng-template>
