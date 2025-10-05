@@ -11,8 +11,7 @@
     "test": "pnpm nx run-many -t test",
     "all": "pnpm nx run-many -t lint,build,test",
     "serve": "pnpm nx run-many -t serve",
-    "predeploy": "pnpm build -p client --baseHref /bilva/ --deployUrl /bilva/",
-    "deploy": "gh-pages -d dist/apps/client",
+    "deploy": " pnpm build -p client --baseHref /bilva/ --deployUrl /bilva/ && gh-pages -d dist/apps/client",
     "prisma": "prisma migrate dev -n init && prisma generate"
   },
   "private": true,
