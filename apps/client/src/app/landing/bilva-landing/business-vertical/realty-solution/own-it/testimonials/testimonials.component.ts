@@ -14,42 +14,42 @@ export class TestimonialsComponent {
   isModalOpen = false;
   testimonials = [
     {
-      name: 'Customer Name 1',
+      name: 'XXX',
       customerId: 'CRN10001',
       rating: 4,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
-      name: 'Customer Name 2',
+      name: 'YYY',
       customerId: 'CRN10002',
       rating: 5,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
-      name: 'Customer Name 3',
+      name: 'ZZZ',
       customerId: 'CRN10003',
       rating: 4,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
-      name: 'Customer Name 4',
+      name: 'XXXX',
       customerId: 'CRN10004',
       rating: 2,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
-      name: 'Customer Name 5',
+      name: 'YYYY',
       customerId: 'CRN10004',
       rating: 2,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
-      name: 'Customer Name 6',
+      name: 'ZZZZ',
       customerId: 'CRN10004',
       rating: 2,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",

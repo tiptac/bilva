@@ -23,7 +23,7 @@ export class SolutionsComponent {
       title: 'Home Construction',
       content:
         'Building spaces that last, with refined design and honest value.',
-      charges: ['Turnkey - Rs1950/SqFt', 'Hybrid - Rs350/SqFt'],
+      charges: ['Turnkey - Rs1950/SqFt Onwards', 'Hybrid - Rs350/SqFt'],
     },
     {
       imgSrc: 'assets/images/HI.webp',
@@ -35,7 +35,7 @@ export class SolutionsComponent {
       imgSrc: 'assets/images/AM.webp',
       title: 'Asset Management',
       content:
-        'Effortless property care that safeguards value and amplifies returns.',
+        'Streamlined property care that protects assets and drives returns.',
       charges: ['10% of monthly rental / Pay-Per-Use'],
     },
     {
