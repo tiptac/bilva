@@ -24,8 +24,8 @@
         <ng-template>
           <ion-content class="ion-padding">
             {{ testimonial.name }}
-            <span class="customer-id"> ({{ testimonial.projectCode }}) </span>
             <br />
+            <div class="customer-id">{{ testimonial.projectCode }}</div>
             <br />
             <bilva-rating [rating]="testimonial.rating" />
             <p>
