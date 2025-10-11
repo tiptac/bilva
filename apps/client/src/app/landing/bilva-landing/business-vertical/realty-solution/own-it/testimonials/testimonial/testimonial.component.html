@@ -9,8 +9,8 @@
     ></iframe>
     <ion-card-title>
       {{ testimonial.name }}
-      <span class="customer-id"> ({{ testimonial.customerId }}) </span>
     </ion-card-title>
+    <div class="customer-id">{{ testimonial.projectCode }}</div>
   </ion-card-header>
   <ion-card-content class="ion-text-left">
     <bilva-rating [rating]="testimonial.rating" />
@@ -24,7 +24,7 @@
         <ng-template>
           <ion-content class="ion-padding">
             {{ testimonial.name }}
-            <span class="customer-id"> ({{ testimonial.customerId }}) </span>
+            <span class="customer-id"> ({{ testimonial.projectCode }}) </span>
             <br />
             <br />
             <bilva-rating [rating]="testimonial.rating" />

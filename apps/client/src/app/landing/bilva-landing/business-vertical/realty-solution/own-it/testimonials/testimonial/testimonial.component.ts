@@ -7,7 +7,7 @@ import { RatingComponent } from '../../../../../../../common/components/rating/r
 
 export interface Testimonial {
   name: string;
-  customerId: string;
+  projectCode: string;
   rating: number;
   text: string;
   url: string;

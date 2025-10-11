@@ -1,7 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { TestimonialComponent } from './testimonial/testimonial.component';
+import {
+  Testimonial,
+  TestimonialComponent,
+} from './testimonial/testimonial.component';
 
 @Component({
   selector: 'bilva-own-it-testimonials',
@@ -12,45 +15,45 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
 })
 export class TestimonialsComponent {
   isModalOpen = false;
-  testimonials = [
+  testimonials: Array<Testimonial> = [
     {
       name: 'XXX',
-      customerId: 'CRN10001',
+      projectCode: 'Home Construction / HC-P4-98',
       rating: 4,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
       name: 'YYY',
-      customerId: 'CRN10002',
+       projectCode: 'Home Interiors / HI-P4-99',
       rating: 5,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
       name: 'ZZZ',
-      customerId: 'CRN10003',
+      projectCode: 'Buying and Selling / BS-P4-98',
       rating: 4,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
       name: 'XXXX',
-      customerId: 'CRN10004',
+      projectCode: 'Home Interiors / HI-P4-98',
       rating: 2,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
       name: 'YYYY',
-      customerId: 'CRN10004',
+      projectCode: 'Asset Managment / AM-P4-98',
       rating: 2,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
     },
     {
       name: 'ZZZZ',
-      customerId: 'CRN10004',
+      projectCode: 'Relocation Support / RS-P4-98',
       rating: 2,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       url: 'https://www.youtube-nocookie.com/embed/FOMTr6JQTSY?si=Yqgl4LVK_JonPYLh',
