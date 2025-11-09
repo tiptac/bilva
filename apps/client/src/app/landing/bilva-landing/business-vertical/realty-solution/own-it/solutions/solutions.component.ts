@@ -36,7 +36,7 @@ export class SolutionsComponent {
       title: 'Asset Management',
       content:
         'Streamlined property care that protects assets and drives returns.',
-      charges: ['10% of monthly rental / Pay per use'],
+      charges: ['Pay per use'],
     },
     {
       imgSrc: 'assets/images/RS.WEBP',
